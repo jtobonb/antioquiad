@@ -1,0 +1,25 @@
+<%= form_for(@subregion) do |f| %>
+  <% if @subregion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subregion.errors.count, "error") %> prohibited this subregion from being saved:</h2>
+
+      <ul>
+      <% @subregion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cod_subregion %><br />
+    <%= f.number_field :cod_subregion %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_subregion %><br />
+    <%= f.text_field :nombre_subregion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

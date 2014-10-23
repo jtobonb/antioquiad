@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre programa:</b>
+  <%= @supplier.nombre_programa %>
+</p>
+
+<p>
+  <b>Entidad ejecutora:</b>
+  <%= @supplier.entidad_ejecutora %>
+</p>
+
+<p>
+  <b>Fase:</b>
+  <%= @supplier.fase %>
+</p>
+
+<p>
+  <b>Fecha entrega:</b>
+  <%= @supplier.fecha_entrega %>
+</p>
+
+<p>
+  <b>Responsable:</b>
+  <%= @supplier.responsable %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @supplier.cantidad %>
+</p>
+
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>

@@ -1,0 +1,2 @@
+module EstablecPpalsHelper
+end

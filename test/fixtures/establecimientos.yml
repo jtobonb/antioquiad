@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_municipio: 1
+  dane_establecimiento: 1
+  localidad: MyString
+  nombre: MyString
+  zona: MyString
+  calendario: MyString
+  jornada: MyString
+  direccion: MyString
+  telefono: MyString
+  email: MyString
+  usuario: MyString
+
+two:
+  id_municipio: 1
+  dane_establecimiento: 1
+  localidad: MyString
+  nombre: MyString
+  zona: MyString
+  calendario: MyString
+  jornada: MyString
+  direccion: MyString
+  telefono: MyString
+  email: MyString
+  usuario: MyString

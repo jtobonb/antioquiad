@@ -1,0 +1,2 @@
+module PrincipalEstablecsHelper
+end

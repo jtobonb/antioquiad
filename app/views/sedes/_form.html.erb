@@ -1,0 +1,57 @@
+<%= form_for(@sede) do |f| %>
+  <% if @sede.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sede.errors.count, "error") %> prohibited this sede from being saved:</h2>
+
+      <ul>
+      <% @sede.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dane_sede %><br />
+    <%= f.number_field :dane_sede %>
+  </div>
+  <div class="field">
+    <%= f.label :dane_establec %><br />
+    <%= f.number_field :dane_establec %>
+  </div>
+  <div class="field">
+    <%= f.label :localidad %><br />
+    <%= f.text_field :localidad %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :zona %><br />
+    <%= f.text_field :zona %>
+  </div>
+  <div class="field">
+    <%= f.label :calendario %><br />
+    <%= f.text_field :calendario %>
+  </div>
+  <div class="field">
+    <%= f.label :jornada %><br />
+    <%= f.text_field :jornada %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :correo %><br />
+    <%= f.text_field :correo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

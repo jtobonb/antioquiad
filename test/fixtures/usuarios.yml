@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cedula: 1
+  tipo_funcionario: MyString
+  primer_nombre: MyString
+  segundo_nombre: MyString
+  primer_apellido: MyString
+  segundo_apellido: MyString
+  genero: MyString
+  direccion: MyString
+  telefono: MyString
+  num_celular: MyString
+  correo: MyString
+  contraseña: MyString
+
+two:
+  cedula: 1
+  tipo_funcionario: MyString
+  primer_nombre: MyString
+  segundo_nombre: MyString
+  primer_apellido: MyString
+  segundo_apellido: MyString
+  genero: MyString
+  direccion: MyString
+  telefono: MyString
+  num_celular: MyString
+  correo: MyString
+  contraseña: MyString

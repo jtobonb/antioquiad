@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  equipo_id: MyString
+  nombre: MyString
+  fabricante: MyString
+  modelo: MyString
+  serial: MyString
+  procesador: MyString
+  memoria_ram: MyString
+  disco_duro: MyString
+  display: MyString
+  sist_operativo: MyString
+
+two:
+  equipo_id: MyString
+  nombre: MyString
+  fabricante: MyString
+  modelo: MyString
+  serial: MyString
+  procesador: MyString
+  memoria_ram: MyString
+  disco_duro: MyString
+  display: MyString
+  sist_operativo: MyString

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cod subregion:</b>
+  <%= @subregion.cod_subregion %>
+</p>
+
+<p>
+  <b>Nombre subregion:</b>
+  <%= @subregion.nombre_subregion %>
+</p>
+
+
+<%= link_to 'Edit', edit_subregion_path(@subregion) %> |
+<%= link_to 'Back', subregions_path %>

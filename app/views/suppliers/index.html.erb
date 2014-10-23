@@ -1,0 +1,33 @@
+<h1>Listing suppliers</h1>
+
+<table>
+  <tr>
+    <th>Nombre programa</th>
+    <th>Entidad ejecutora</th>
+    <th>Fase</th>
+    <th>Fecha entrega</th>
+    <th>Responsable</th>
+    <th>Cantidad</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @suppliers.each do |supplier| %>
+  <tr>
+    <td><%= supplier.nombre_programa %></td>
+    <td><%= supplier.entidad_ejecutora %></td>
+    <td><%= supplier.fase %></td>
+    <td><%= supplier.fecha_entrega %></td>
+    <td><%= supplier.responsable %></td>
+    <td><%= supplier.cantidad %></td>
+    <td><%= link_to 'Show', supplier %></td>
+    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+    <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Supplier', new_supplier_path %>

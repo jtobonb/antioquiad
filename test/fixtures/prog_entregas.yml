@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cod_programa: 1
+  nombre_programa: MyString
+  entidad_ejecutora: MyString
+  fase: MyString
+  fecha_entrega: MyString
+  responsable: MyString
+  cantidad: 1
+
+two:
+  cod_programa: 1
+  nombre_programa: MyString
+  entidad_ejecutora: MyString
+  fase: MyString
+  fecha_entrega: MyString
+  responsable: MyString
+  cantidad: 1

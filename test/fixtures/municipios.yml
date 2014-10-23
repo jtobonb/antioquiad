@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cod_municipio: 1
+  nombre_municipio: MyString
+  cod_subregion: MyString
+
+two:
+  cod_municipio: 1
+  nombre_municipio: MyString
+  cod_subregion: MyString

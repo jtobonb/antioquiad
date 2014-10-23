@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_equipo: 1
+  dane_sede: 1
+  tipo: MyString
+  origen: MyString
+  fecha_entrega: 2014-10-17
+
+two:
+  id_equipo: 1
+  dane_sede: 1
+  tipo: MyString
+  origen: MyString
+  fecha_entrega: 2014-10-17

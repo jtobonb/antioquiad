@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EQUIPAMIENTO A_D</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+   <header align="center"> 
+   <%= image_tag("logo.PNG")%>
+
+    <div ><h1>Antioquia Digital</h1></div>
+
+
+   </header>
+
+<%= yield %>
+    <footer align="center"> 
+
+   	<h4>
+   		<p> Secretaría de Educación de Antioquia | Antioquia La Más Educada</p>
+        <p>Calle 42 n° 52 - 106 Centro Administrativo Departamental "José María Córdova"</p>
+        <p>Horario de Lunes a Viernes de 8:00 A.M. a 10:30 A.M. y 2:00 P.M. a 4:00 P.M.</p>
+        <p> Contacto: (+57 4) 383 84 11 | (+57 4) 383 84 80 | (+57 4) 383 8400</p>
+        <p>Antioquia, Colombia - Suramerica</p>
+
+   	</h4>
+   	
+   </footer>
+
+</body>
+</html>

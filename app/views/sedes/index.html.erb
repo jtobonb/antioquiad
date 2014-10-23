@@ -1,0 +1,41 @@
+<h1>Listing sedes</h1>
+
+<table>
+  <tr>
+    <th>Dane sede</th>
+    <th>Dane establec</th>
+    <th>Localidad</th>
+    <th>Nombre</th>
+    <th>Zona</th>
+    <th>Calendario</th>
+    <th>Jornada</th>
+    <th>Direccion</th>
+    <th>Telefono</th>
+    <th>Correo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sedes.each do |sede| %>
+  <tr>
+    <td><%= sede.dane_sede %></td>
+    <td><%= sede.dane_establec %></td>
+    <td><%= sede.localidad %></td>
+    <td><%= sede.nombre %></td>
+    <td><%= sede.zona %></td>
+    <td><%= sede.calendario %></td>
+    <td><%= sede.jornada %></td>
+    <td><%= sede.direccion %></td>
+    <td><%= sede.telefono %></td>
+    <td><%= sede.correo %></td>
+    <td><%= link_to 'Show', sede %></td>
+    <td><%= link_to 'Edit', edit_sede_path(sede) %></td>
+    <td><%= link_to 'Destroy', sede, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sede', new_sede_path %>
