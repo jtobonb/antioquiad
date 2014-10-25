@@ -9,3 +9,4 @@ class CreateMunicipios < ActiveRecord::Migration
     end
   end
 end
+
