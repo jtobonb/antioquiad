@@ -18,21 +18,26 @@
         <div class="navbar">
           <div class="navbar-inner">
           <div class="container">
-            <a href="#" class="brand"><%= image_tag("logo.png", :width => 25)%></a>
+            <a href="#" class="brand"><%= image_tag("logo.PNG", :width => 25)%></a>
 
             <% if user_signed_in? %>
             <ul class="nav pull-left">
-              <li><a href="#" >My App</a></li>
+              <li><a href="#" >Gestion</a></li>
               <li class="divider-vertical"></li>
-              <li class="active"><a href="#" >My App</a></li>
+              <li><a href="#" >Usuarios</a></li>
               <li class="divider-vertical"></li>
-              <li><a href="#" >My App</a></li>
+              <li><a href="#" >Informes</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="#" >Reportes</a></li>
             </ul>
             <% end %>
 
             <ul class="nav pull-right">
-              <li><%= link_to "Iniciar sesion", new_user_session_path%></li>
+              <% if user_signed_in? %>
               <li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+              <li><%= link_to "Iniciar sesion", new_user_session_path%></li>
+              <% end %>
             </ul>
             
             <!--
