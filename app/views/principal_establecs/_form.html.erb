@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field"> 
     <%= f.label :dane_establec %><br />
-    <%= f.number_field :dane_establec %>
+    <%= f.text_field :dane_establec %>
   </div>
   <div class="field">
     <%= f.label :localidad %><br />
@@ -28,8 +28,10 @@
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :zona %><br />
-    <%= f.text_field :zona %>
+    <% zonas = {"RURAL" => "RURAL", "URBANA" => "URBANA", "RURAL,URBANA" => "RURAL,URBANA"} %>
+      <% lista = zonas.sort %>
+      <%= f.label :zona %><br />
+      <%= f.select :zona, lista %>
   </div>
   <div class="field">
     <%= f.label :calendario %><br />
