@@ -22,11 +22,32 @@
 
             <% if user_signed_in? %>
             <ul class="nav pull-left">
-              <li><a href="#" >Gestion</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestión <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Establecimientos</a></li>
+                  <li><a href="#">Sedes</a></li>
+                  <li><a href="#">Programas</a></li>
+                  <li><a href="#">Equipos</a></li>
+                </ul>
+              </li>
               <li class="divider-vertical"></li>
               <li><a href="#" >Usuarios</a></li>
               <li class="divider-vertical"></li>
-              <li><a href="#" >Informes</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown-submenu"><a href="#">Equipos</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Por tipo</a></li>
+                        <li><a href="#">Por programa</a></li>
+                        <li><a href="#">Por año</a></li>
+                        <li><a href="#">Estado de equipos</a></li>
+                        <li><a href="#">Otros</a></li>
+                      </ul>
+                  </li>
+                </ul>
+              </li>
               <li class="divider-vertical"></li>
               <li><a href="#" >Reportes</a></li>
             </ul>
@@ -91,5 +112,11 @@
   </footer>
 
 </div>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
