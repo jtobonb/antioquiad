@@ -1,47 +1,19 @@
 # -*- encoding : utf-8 -*-
 Antioquiad::Application.routes.draw do
   resources :municipios
-
-
   resources :subregions
-
-
   resources :suppliers
-
-
   resources :sedes
-
-
   resources :principal_establecs
-
-
   resources :establec_ppals
-
-
   resources :equipment
-
-
   resources :prog_entregas
-
-
   resources :usuarios
-
-
   resources :componentes
-
-
   resources :equipos
-
-
   resources :sede_establecs
-
-
   resources :establec_ppals
-
-
   resources :establecimientos
-
-
   devise_for :users
 
     #get "start/index"
