@@ -1,5 +1,10 @@
 # -*- encoding : utf-8 -*-
 Antioquiad::Application.routes.draw do
+  
+  root :to => "start#index"
+  get "admin/dashboard"
+  ActiveAdmin.routes(self)
+
   resources :municipios
   resources :subregions
   resources :suppliers
@@ -16,9 +21,11 @@ Antioquiad::Application.routes.draw do
   resources :establecimientos
   devise_for :users
 
+  ActiveAdmin.routes(self)
+
     #get "start/index"
     
-    root :to => "start#index"
+   # root :to => "start#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
