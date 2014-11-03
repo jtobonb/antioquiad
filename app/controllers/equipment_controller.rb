@@ -1,12 +1,14 @@
 class EquipmentController < ApplicationController
   # GET /equipment
   # GET /equipment.json
-  def index
-    @equipment = Equipment.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @equipment }
+    def index
+    if current_user.superadmin?
+    @equipment = Equipment.all
+    else
+      @grab_dane = PrincipalEstablec.where(correo: current_user.email)
+      @dane= @grab_dane[0].dane_establec
+      @equipment = PrincipalEstablec.where(dane_sede: @dane)
     end
   end
 

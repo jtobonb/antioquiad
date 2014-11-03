@@ -68,6 +68,7 @@ class EstablecPpalsController < ApplicationController
       end
     end
   end
+ 
 
   # DELETE /establec_ppals/1
   # DELETE /establec_ppals/1.json

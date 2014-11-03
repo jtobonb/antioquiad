@@ -1,12 +1,14 @@
 class SedesController < ApplicationController
   # GET /sedes
   # GET /sedes.json
-  def index
-    @sedes = Sede.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @sedes }
+    def index
+    if current_user.superadmin?
+    @sedes = Sede.all
+    else
+      @grab_dane = PrincipalEstablec.where(correo: current_user.email)
+      @dane= @grab_dane[0].dane_establec
+      @sedes = Sede.where(dane_establec: @dane)
     end
   end
 

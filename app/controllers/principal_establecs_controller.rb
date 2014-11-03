@@ -2,11 +2,12 @@ class PrincipalEstablecsController < ApplicationController
   # GET /principal_establecs
   # GET /principal_establecs.json
   def index
+    if current_user.superadmin?
     @principal_establecs = PrincipalEstablec.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @principal_establecs }
+    else
+      @grab_dane = PrincipalEstablec.where(correo: current_user.email)
+      @dane= @grab_dane[0].dane_establec
+      @principal_establecs = PrincipalEstablec.where(dane_establec: @dane)
     end
   end
 
