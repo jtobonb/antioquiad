@@ -1,20 +1,29 @@
-<h1>Listing sedes</h1>
+<div class="page-header">
+        <h1>Sedes</h1>
+</div>
 
-<table>
+<div class="row-fluid">
+    <div class="span12">
+        <%= link_to 'Crear nuevo', new_sede_path, :class => "btn btn btn-success" %>
+    </div>
+</div>
+<br />
+
+<table class="table table-bordered table-striped">
   <tr>
     <th>Dane sede</th>
-    <th>Dane establec</th>
+    <th>Dane establecimiento</th>
     <th>Localidad</th>
     <th>Nombre</th>
     <th>Zona</th>
     <th>Calendario</th>
     <th>Jornada</th>
-    <th>Direccion</th>
-    <th>Telefono</th>
+    <th>Dirección</th>
+    <th>Teléfono</th>
     <th>Correo</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><div align="center"><a href="#" title="Buscar"><i class="icon-search"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Editar"><i class="icon-edit"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Eliminar"><i class="icon-remove"></i></a></div></th>
   </tr>
 
 <% @sedes.each do |sede| %>
@@ -29,13 +38,9 @@
     <td><%= sede.direccion %></td>
     <td><%= sede.telefono %></td>
     <td><%= sede.correo %></td>
-    <td><%= link_to 'Show', sede %></td>
-    <td><%= link_to 'Edit', edit_sede_path(sede) %></td>
-    <td><%= link_to 'Destroy', sede, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', sede %></td>
+    <td><%= link_to 'Editar', edit_sede_path(sede) %></td>
+    <td><%= link_to 'Eliminar', sede, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Sede', new_sede_path %>

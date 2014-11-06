@@ -1,59 +1,185 @@
-<%= form_for(@principal_establec) do |f| %>
+<%= form_for (@principal_establec), :validate => :true do |f| %>
   <% if @principal_establec.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@principal_establec.errors.count, "error") %> prohibited this principal_establec from being saved:</h2>
-
-      <ul>
-      <% @principal_establec.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+    <div class="span12">
+    <div class="alert alert-danger" role="alert">
+      <div id="error_explanation">
+        <!---
+        <h2><%= pluralize(@principal_establec.errors.count, "error") %> prohibited this principal_establec from being saved:</h2>
+        -->
+        <ul>
+        <% @principal_establec.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+      </div>
+      </div>
     </div>
   <% end %>
 
-  <div class="field"> 
-    <%= f.label :dane_establec %><br />
-    <%= f.text_field :dane_establec %>
+  <div class="row">
+    <div class="span2">
+      <div align="right"> 
+        <label>Código Dane (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field">
+        <div class="control-group<%= @principal_establec.errors[:dane_establec].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :dane_establec, :placeholder => "Código dane" %>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="span2">
+      <div class="field" align="right">
+        <label>Localidad (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field">
+        <div class="control-group<%= @principal_establec.errors[:localidad].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :localidad, :placeholder => "Localidad" %>
+            </span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :localidad %><br />
-    <%= f.text_field :localidad %>
+
+  <div class="row">
+    <div class="span2">
+      <div align="right"> 
+        <label>Nombre del Rector (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field"> 
+        <div class="control-group<%= @principal_establec.errors[:rector].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :rector, :placeholder => "Nombre del rector" %>
+            </span>
+        </div>
+      </div>
+    </div>
+    <div class="span2">
+      <div class="field" align="right">
+        <label>Nombre de la Institución (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field">
+        <div class="control-group<%= @principal_establec.errors[:nombre].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :nombre, :placeholder => "Nombre de la institución" %>
+            </span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :rector %><br />
-    <%= f.text_field :rector %>
+
+  <div class="row">
+    <div class="span2">
+      <div align="right"> 
+        <label>Zona (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field"> 
+          <div class="field">
+            <% zonas = {"RURAL" => "RURAL", "URBANA" => "URBANA", "RURAL,URBANA" => "RURAL,URBANA"} %>
+              <% lista = zonas.sort %>
+              <%= f.select :zona, lista %>
+          </div>
+      </div>
+    </div>
+    <div class="span2">
+      <div class="field" align="right">
+        <label>Calendario (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field">
+        <div class="control-group<%= @principal_establec.errors[:calendario].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :calendario, :placeholder => "Calendario" %>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+
+  <div class="row">
+    <div class="span2">
+      <div align="right"> 
+        <label>Jornada (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field">
+        <div class="control-group<%= @principal_establec.errors[:jornada].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :jornada, :placeholder => "Jornada" %>
+            </span>
+        </div>
+      </div>
+    </div>
+    <div class="span2">
+      <div class="field" align="right">
+        <label>Dirección (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field">
+        <div class="control-group<%= @principal_establec.errors[:direccion].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :direccion, :placeholder => "Dirección" %>
+            </span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <% zonas = {"RURAL" => "RURAL", "URBANA" => "URBANA", "RURAL,URBANA" => "RURAL,URBANA"} %>
-      <% lista = zonas.sort %>
-      <%= f.label :zona %><br />
-      <%= f.select :zona, lista %>
+
+  <div class="row">
+    <div class="span2">
+      <div align="right"> 
+        <label>Teléfono (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field"> 
+        <div class="control-group<%= @principal_establec.errors[:telefono].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :telefono, :placeholder => "Teléfono" %>
+            </span>
+        </div>
+      </div>
+    </div>
+    <div class="span2">
+      <div class="field" align="right">
+        <label>Correo electrónico (*) </label>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="field">
+        <div class="control-group<%= @principal_establec.errors[:correo].any? ? " error" : "" %>">
+          <span style="color:red">
+            <%= f.text_field :correo, :placeholder => "Correo electrónico", :pattern => "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" %>
+            </span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :calendario %><br />
-    <%= f.text_field :calendario %>
+
+<br />
+
+  <div class="row">
+    <div class="span12" align="center">
+       <%= f.submit "Enviar", class: "btn btn btn-success" %>
+       <%= link_to 'Cancelar', principal_establecs_path, :class => "btn btn btn-success" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :jornada %><br />
-    <%= f.text_field :jornada %>
-  </div>
-  <div class="field">
-    <%= f.label :direccion %><br />
-    <%= f.text_field :direccion %>
-  </div>
-  <div class="field">
-    <%= f.label :telefono %><br />
-    <%= f.text_field :telefono %>
-  </div>
-  <div class="field">
-    <%= f.label :correo %><br />
-    <%= f.text_field :correo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

@@ -1,55 +1,77 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+        <h1>Ver Establecimiento</h1>
+</div>
 
-<p>
-  <b>Dane establec:</b>
-  <%= @principal_establec.dane_establec %>
-</p>
+  <% if notice %>
+  <div class="row">
+      <div class="span12">
+        <div class="alert alert-success" role="alert">
+          <p id="notice"><%= notice %></p>
+        </div>
+      </div>
+   </div>
+   <% end %>
 
-<p>
-  <b>Localidad:</b>
-  <%= @principal_establec.localidad %>
-</p>
+<div class="row">
+    <div class="span6">
+      <p>
+        <b>Código dane:</b>
+        <%= @principal_establec.dane_establec %>
+      </p>
 
-<p>
-  <b>Rector:</b>
-  <%= @principal_establec.rector %>
-</p>
+      <p>
+        <b>Localidad:</b>
+        <%= @principal_establec.localidad %>
+      </p>
 
-<p>
-  <b>Nombre:</b>
-  <%= @principal_establec.nombre %>
-</p>
+      <p>
+        <b>Nombre del Rector:</b>
+        <%= @principal_establec.rector %>
+      </p>
 
-<p>
-  <b>Zona:</b>
-  <%= @principal_establec.zona %>
-</p>
+      <p>
+        <b>Nombre de la Institución:</b>
+        <%= @principal_establec.nombre %>
+      </p>
 
-<p>
-  <b>Calendario:</b>
-  <%= @principal_establec.calendario %>
-</p>
+      <p>
+        <b>Zona:</b>
+        <%= @principal_establec.zona %>
+      </p>
+    </div>
+    <div class="span6">
+      <p>
+        <b>Calendario:</b>
+        <%= @principal_establec.calendario %>
+      </p>
 
-<p>
-  <b>Jornada:</b>
-  <%= @principal_establec.jornada %>
-</p>
+      <p>
+        <b>Jornada:</b>
+        <%= @principal_establec.jornada %>
+      </p>
 
-<p>
-  <b>Direccion:</b>
-  <%= @principal_establec.direccion %>
-</p>
+      <p>
+        <b>Direccion:</b>
+        <%= @principal_establec.direccion %>
+      </p>
 
-<p>
-  <b>Telefono:</b>
-  <%= @principal_establec.telefono %>
-</p>
+      <p>
+        <b>Telefono:</b>
+        <%= @principal_establec.telefono %>
+      </p>
 
-<p>
-  <b>Correo:</b>
-  <%= @principal_establec.correo %>
-</p>
+      <p>
+        <b>Correo:</b>
+        <%= @principal_establec.correo %>
+      </p>
+    </div>
+  </div>
 
+<br />
 
-<%= link_to 'Edit', edit_principal_establec_path(@principal_establec) %> |
-<%= link_to 'Back', principal_establecs_path %>
+  <div class="row">
+    <div class="span12" align="center">
+      <%= link_to 'Editar', edit_principal_establec_path(@principal_establec), :class => "btn btn btn-success" %>
+      <%= link_to 'Regresar', principal_establecs_path, :class => "btn btn btn-success" %>
+    </div>
+  </div>

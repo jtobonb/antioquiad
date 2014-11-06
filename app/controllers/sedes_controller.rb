@@ -44,7 +44,7 @@ class SedesController < ApplicationController
 
     respond_to do |format|
       if @sede.save
-        format.html { redirect_to @sede, notice: 'Sede was successfully created.' }
+        format.html { redirect_to @sede, notice: 'La sede fue creada satisfactoriamente.' }
         format.json { render json: @sede, status: :created, location: @sede }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class SedesController < ApplicationController
 
     respond_to do |format|
       if @sede.update_attributes(params[:sede])
-        format.html { redirect_to @sede, notice: 'Sede was successfully updated.' }
+        format.html { redirect_to @sede, notice: 'La sede fue actualizada satisfactoriamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
