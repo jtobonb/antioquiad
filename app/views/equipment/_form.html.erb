@@ -11,59 +11,110 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :dane_sede %><br />
-    <%= f.number_field :dane_sede %>
+<div class="row">
+    <div class="span3">
+          <div class="field">
+          <%= f.label :dane_sede %><br />
+          <%= f.number_field :dane_sede %>
+          </div>
+    </div>
+    <div class="span3">      
+        <div class="field">
+              <% tipo = {"portatil" => "portatil", "escritorio" => "escritorio"} %>
+              <% lista = tipo.sort %>
+              <%= f.label :tipo %><br />
+              <%= f.select :tipo, lista %>
+        </div>
+    </div>
+    <div class="span3">
+        <div class="field">
+          <% origen = {"Antioquia Virtual fase I" => "Antioquia Virtual fase I", "Antioquia Virtual fase 2" => "Antioquia Virtual fase 2","Antioquia Virtual fase 3"=>"Antioquia Virtual fase 3","MEDIA"=>"P_MEDIA","ANTIOQUIA DIGITAL"=>"ANTIOQUIA_DIGITAL fase 1"} %>
+          <% lista = origen.sort %>
+          <%= f.label :origen %><br />
+          <%= f.select :origen,lista %>
+        </div>
+    </div>
+
+    <div class="span3">      
+        <div class="field">
+              <%= f.label :fecha_entrega %><br />
+              <%= f.text_field :fecha_entrega %>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="span3">   
+      <div class="field">
+        <%= f.label :nombre %><br />
+        <%= f.text_field :nombre %>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :tipo %><br />
-    <%= f.text_field :tipo %>
+  <div class="span3">   
+    <div class="field">
+      <% fabricante = {"Hewlett-Packard" => "Hewlett-Packard", "compaq" => "compaq","Compumax M722SR "=>"Compumax M722SR "} %>
+      <% lista = fabricante.sort %>
+      <%= f.label :fabricante %><br />
+      <%= f.select :fabricante,lista %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :origen %><br />
-    <%= f.text_field :origen %>
+  <div class="span3">   
+    <div class="field">
+      <%= f.label :modelo %><br />
+      <%= f.text_field :modelo %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :fecha_entrega %><br />
-    <%= f.text_field :fecha_entrega %>
+  <div class="span3">   
+    <div class="field">
+      <%= f.label :serial %><br />
+      <%= f.text_field :serial %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+</div>
+
+  <div class="row">
+    <div class="span3">   
+        <div class="field">
+          <%= f.label :procesador %><br />
+          <%= f.text_field :procesador %>
+        </div>
+    </div>
+    <div class="span3">   
+      <div class="field">
+        <%= f.label :memoria_ram %><br />
+        <%= f.text_field :memoria_ram %>
+      </div>
+    </div>
+    <div class="span3">  
+      <div class="field">
+        <%= f.label :disco_duro %><br />
+        <%= f.text_field :disco_duro %>
+      </div> 
+    </div>
+
+    <div class="span3">  
+      <div class="field">
+        <%= f.label :display %><br />
+        <%= f.text_field :display %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :fabricante %><br />
-    <%= f.text_field :fabricante %>
+
+
+<div class="row">
+  <div class="span6">  
+        <div class="field">
+          <%= f.label :sist_operativo %><br />
+          <%= f.text_field :sist_operativo %>
+        </div> 
   </div>
-  <div class="field">
-    <%= f.label :modelo %><br />
-    <%= f.text_field :modelo %>
+
+
+  <div class="span12">  
+      <div class="actions">
+        <%= f.submit %>
+      </div> 
   </div>
-  <div class="field">
-    <%= f.label :serial %><br />
-    <%= f.text_field :serial %>
-  </div>
-  <div class="field">
-    <%= f.label :procesador %><br />
-    <%= f.text_field :procesador %>
-  </div>
-  <div class="field">
-    <%= f.label :memoria_ram %><br />
-    <%= f.text_field :memoria_ram %>
-  </div>
-  <div class="field">
-    <%= f.label :disco_duro %><br />
-    <%= f.text_field :disco_duro %>
-  </div>
-  <div class="field">
-    <%= f.label :display %><br />
-    <%= f.text_field :display %>
-  </div>
-  <div class="field">
-    <%= f.label :sist_operativo %><br />
-    <%= f.text_field :sist_operativo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+
 <% end %>

@@ -1,7 +1,7 @@
 
-<h1>Listing equipment</h1>
+<h1>LISTADO DE EQUIPOS POR FABRICANTE</h1>
 <% unless @equipment.empty?%>
-<table class="table table-bordered table-striped">
+<table>
   <tr>
     <th>Dane sede</th>
     <th>Tipo</th>
@@ -17,7 +17,7 @@
     <th>Display</th>
     <th>Sist operativo</th>
     <th></th>
-    <th></th>   
+    <th></th>
     <th></th>
   </tr>
 
@@ -28,7 +28,7 @@
     <td><%= equipment.origen %></td>
     <td><%= equipment.fecha_entrega %></td>
     <td><%= equipment.nombre %></td>
-    <td><%= equipment.fabricante %></td>
+    <td><%= equipment.fabricante.gsub(/\s+/, "") %></td>
     <td><%= equipment.modelo %></td>
     <td><%= equipment.serial %></td>
     <td><%= equipment.procesador %></td>

@@ -1,19 +1,73 @@
 class EquipmentController < ApplicationController
   # GET /equipment
   # GET /equipment.json
+    def tipo
+    if current_user.superadmin?
+    @equipment = Equipment.where(tipo: params[:tipo])
+    else
+      @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
+      @dane_establec= @grab_dane_establecimiento[0].dane_establec
+      @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
+      @dane_sede = @grab_dane_sede[0].dane_sede
+      @equipment = Equipment.where(dane_sede: [@dane_sede])
+
+    end
+  end
+
+    def programa
+    if current_user.superadmin?
+       @equipment = Equipment.where(origen: params[:origen])
+    else
+      @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
+      @dane_establec= @grab_dane_establecimiento[0].dane_establec
+      @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
+      @dane_sede = @grab_dane_sede[0].dane_sede
+      @equipment = Equipment.where(dane_sede: [@dane_sede])
+
+    end
+  end
+
+
+  
+    def fecha
+    if current_user.superadmin?
+       @equipment = Equipment.where(fecha_entrega: params[:fecha_entrega])
+    else
+      @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
+      @dane_establec= @grab_dane_establecimiento[0].dane_establec
+      @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
+      @dane_sede = @grab_dane_sede[0].dane_sede
+      @equipment = Equipment.where(dane_sede: [@dane_sede])
+
+    end
+  end
+
+    def fabricante
+    if current_user.superadmin?
+       @equipment = Equipment.where(fabricante: params[:fabricante])
+    else
+      @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
+      @dane_establec= @grab_dane_establecimiento[0].dane_establec
+      @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
+      @dane_sede = @grab_dane_sede[0].dane_sede
+      @equipment = Equipment.where(dane_sede: [@dane_sede])
+
+    end
+  end
 
     def index
     if current_user.superadmin?
     @equipment = Equipment.all
     else
-      @grab_dane = PrincipalEstablec.where(correo: current_user.email)
-      @dane= @grab_dane[0].dane_establec
-      @equipment = PrincipalEstablec.where(dane_sede: @dane)
+      @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
+      @dane_establec= @grab_dane_establecimiento[0].dane_establec
+      @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
+      @dane_sede = @grab_dane_sede[0].dane_sede
+      @equipment = Equipment.where(dane_sede: [@dane_sede])
+
     end
   end
 
-  # GET /equipment/1
-  # GET /equipment/1.json
   def show
     @equipment = Equipment.find(params[:id])
 

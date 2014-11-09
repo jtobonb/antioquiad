@@ -5,10 +5,12 @@ class PrincipalEstablecsController < ApplicationController
     if current_user.superadmin?
     @principal_establecs = PrincipalEstablec.all
     else
-      @grab_dane = PrincipalEstablec.where(correo: current_user.email)
-      @dane= @grab_dane[0].dane_establec
+      @join_sedes = Sede.joins('INNER JOIN principal_establecs ON  principal_establecs.dane_establec = sedes.dane_establec').where(correo: current_user.email)
+      @join_establecimientos = PrincipalEstablec.joins('INNER JOIN sedes ON  sedes.dane_establec = principal_establecs.dane_establec').where(correo: current_user.email)
+      @dane= @join_establecimientos[0].dane_establec
       @principal_establecs = PrincipalEstablec.where(dane_establec: @dane)
     end
+    @join = Sede.joins('INNER JOIN principal_establecs pr ON  pr.dane_establec = sedes.dane_establec').where(correo: current_user.email)
   end
 
   # GET /principal_establecs/1
@@ -81,4 +83,26 @@ class PrincipalEstablecsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def informacion_usuario
+    if current_user.superadmin?
+       @nombre = "Administrador"
+       @permisos = "Super Administrador"
+       @entidad = "Gobernacion de Antioquia"
+       @correo = current_user.email
+    else
+      @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
+      @dane_establec= @grab_dane_establecimiento[0].dane_establec
+      @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
+      @dane_sede = @grab_dane_sede[0].dane_sede
+      @equipment = Equipment.where(dane_sede: [@dane_sede])
+      @nombre = @grab_dane_establecimiento[0].rector
+      @permisos ="Administrador Establecimientos"
+      @entidad="Gobernacion de Antioquia"
+      @correo = current_user.email
+
+    end
+
+  end
+
 end
