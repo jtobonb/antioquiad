@@ -1,6 +1,15 @@
-<h1>Listing suppliers</h1>
+<div class="page-header">
+        <h1>Programas</h1>
+</div>
 
-<table>
+<div class="row-fluid">
+    <div class="span12">
+        <%= link_to 'Crear nuevo', new_supplier_path, :class => "btn btn btn-success" %>
+    </div>
+</div>
+<br />
+
+<table  class="table table-bordered table-striped">
   <tr>
     <th>Nombre programa</th>
     <th>Entidad ejecutora</th>
@@ -8,9 +17,9 @@
     <th>Fecha entrega</th>
     <th>Responsable</th>
     <th>Cantidad</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><div align="center"><a href="#" title="Buscar"><i class="icon-search"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Editar"><i class="icon-edit"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Eliminar"><i class="icon-remove"></i></a></div></th>
   </tr>
 
 <% @suppliers.each do |supplier| %>
@@ -21,13 +30,9 @@
     <td><%= supplier.fecha_entrega %></td>
     <td><%= supplier.responsable %></td>
     <td><%= supplier.cantidad %></td>
-    <td><%= link_to 'Show', supplier %></td>
-    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-    <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', supplier %></td>
+    <td><%= link_to 'Editar', edit_supplier_path(supplier) %></td>
+    <td><%= link_to 'Eliminar', supplier, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Supplier', new_supplier_path %>

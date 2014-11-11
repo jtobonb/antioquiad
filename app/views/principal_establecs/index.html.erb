@@ -4,28 +4,29 @@
 
 <div class="row-fluid">
     <div class="span12">
-        <%= button_to 'Crear nuevo', new_principal_establec_path, :class => "btn btn btn-success" %>
+        <%= link_to 'Crear nuevo', new_principal_establec_path, :class => "btn btn btn-success" %>
     </div>
 </div>
+<br />
 
 <div class="row-fluid">
     <div class="span12">
         <table class="table table-bordered table-striped">
           <tr>
             <th>Codigo dane</th>
-            
+            <!--
             <th>Localidad</th>
-            
+            -->
             <th>Insitución</th>
             <th>Rector</th>
+            <!--
             <th>Zona</th>
-            
             <th>Calendario</th>
             <th>Jornada</th>
             <th>Direccion</th>
             <th>Telefono</th>
             <th>Correo</th>
-            
+            -->
             <th><div align="center"><a href="#" title="Buscar"><i class="icon-search"></i></a></div></th>
             <th><div align="center"><a href="#" title="Editar"><i class="icon-edit"></i></a></div></th>
             <th><div align="center"><a href="#" title="Eliminar"><i class="icon-remove"></i></a></div></th>
@@ -35,22 +36,22 @@
         <% @principal_establecs.each do |principal_establec| %>
           <tr>
             <td><%= principal_establec.dane_establec %></td>
-            
+            <!--
             <td><%= principal_establec.localidad %></td>
-            
+            -->
             <td><%= principal_establec.nombre %></td>
             <td><%= principal_establec.rector %></td>
+            <!--
             <td><%= principal_establec.zona %></td>
-            
             <td><%= principal_establec.calendario %></td>
             <td><%= principal_establec.jornada %></td>
             <td><%= principal_establec.direccion %></td>
             <td><%= principal_establec.telefono %></td>
             <td><%= principal_establec.correo %></td>
-            
+            -->
             <td><%= link_to 'Mostrar', principal_establec %></td>
             <td><%= link_to 'Editar', edit_principal_establec_path(principal_establec) %></td>
-            <td><%= link_to 'Eliminar', principal_establec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Eliminar', principal_establec, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
           </tr>
         <% end %>
         </table>

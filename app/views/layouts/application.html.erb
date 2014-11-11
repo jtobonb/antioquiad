@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>EQUIPAMIENTO A_D</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo.PNG" />
   <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
   <%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +30,8 @@
                   <li><a href="/municipios">Municipios</a></li>
                   <li><%= link_to "Establecimientos", principal_establecs_path %></li>
                   <li><%= link_to "sedes", sedes_path %></li>
-                  <li><a href="#">Programas</a></li>
-                  <li><a href="equipment">Equipos</a></li>
+                  <li><%= link_to "Programas", suppliers_path %></li>
+                  <li><%= link_to "Equipos", equipment_index_path %></li>
                   
 
                 </ul>
@@ -123,13 +124,9 @@
   </div>
   -->
 
-  <div class="row">
-    <div class="span12">
-      <p>
-        <%= yield %>
-      </p>
-    </div>
-  </div>
+
+  <%= yield %>
+
 
 <!-- Footer -->
   <br />

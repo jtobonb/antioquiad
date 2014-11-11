@@ -1,55 +1,77 @@
-<p id="notice"><%= notice %></p>
+  <div class="page-header">
+        <h1>Ver Sede</h1>
+  </div>
 
-<p>
-  <b>Dane sede:</b>
-  <%= @sede.dane_sede %>
-</p>
+  <% if notice %>
+  <div class="row">
+      <div class="span12">
+        <div class="alert alert-success" role="alert">
+          <p id="notice"><%= notice %></p>
+        </div>
+      </div>
+   </div>
+   <% end %>
 
-<p>
-  <b>Dane establec:</b>
-  <%= @sede.dane_establec %>
-</p>
+  <div class="row">
+    <div class="span6">
+      <p>
+        <b>Dane sede:</b>
+        <%= @sede.dane_sede %>
+      </p>
 
-<p>
-  <b>Localidad:</b>
-  <%= @sede.localidad %>
-</p>
+      <p>
+        <b>Dane establecimiento:</b>
+        <%= @sede.dane_establec %>
+      </p>
 
-<p>
-  <b>Nombre:</b>
-  <%= @sede.nombre %>
-</p>
+      <p>
+        <b>Localidad:</b>
+        <%= @sede.localidad %>
+      </p>
 
-<p>
-  <b>Zona:</b>
-  <%= @sede.zona %>
-</p>
+      <p>
+        <b>Nombre:</b>
+        <%= @sede.nombre %>
+      </p>
 
-<p>
-  <b>Calendario:</b>
-  <%= @sede.calendario %>
-</p>
+      <p>
+        <b>Zona:</b>
+        <%= @sede.zona %>
+      </p>
+    </div>
+    <div class="span6">
+      <p>
+        <b>Calendario:</b>
+        <%= @sede.calendario %>
+      </p>
 
-<p>
-  <b>Jornada:</b>
-  <%= @sede.jornada %>
-</p>
+      <p>
+        <b>Jornada:</b>
+        <%= @sede.jornada %>
+      </p>
 
-<p>
-  <b>Direccion:</b>
-  <%= @sede.direccion %>
-</p>
+      <p>
+        <b>Direccion:</b>
+        <%= @sede.direccion %>
+      </p>
 
-<p>
-  <b>Telefono:</b>
-  <%= @sede.telefono %>
-</p>
+      <p>
+        <b>Telefono:</b>
+        <%= @sede.telefono %>
+      </p>
 
-<p>
-  <b>Correo:</b>
-  <%= @sede.correo %>
-</p>
+      <p>
+        <b>Correo:</b>
+        <%= @sede.correo %>
+      </p>
+    </div>
+  </div>
 
+<br />
 
-<%= link_to 'Edit', edit_sede_path(@sede) %> |
-<%= link_to 'Back', sedes_path %>
+  <div class="row">
+    <div class="span12" align="center">
+      <%= link_to 'Editar', edit_sede_path(@sede), :class => "btn btn btn-success" %>
+      <%= link_to 'Regresar', sedes_path, :class => "btn btn btn-success" %>
+    </div>
+  </div>

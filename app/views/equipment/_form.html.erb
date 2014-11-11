@@ -1,119 +1,234 @@
 <%= form_for(@equipment) do |f| %>
   <% if @equipment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
-
-      <ul>
-      <% @equipment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+      <div class="span12">
+        <div class="alert alert-danger" role="alert">
+          <div id="error_explanation">
+            <ul>
+            <% @equipment.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 
-<div class="row">
-    <div class="span3">
-          <div class="field">
-          <%= f.label :dane_sede %><br />
-          <%= f.number_field :dane_sede %>
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Dane sede (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:dane_sede].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :dane_sede, :placeholder => "Dane sede" %>
+            </span>
           </div>
-    </div>
-    <div class="span3">      
-        <div class="field">
-              <% tipo = {"portatil" => "portatil", "escritorio" => "escritorio"} %>
-              <% lista = tipo.sort %>
-              <%= f.label :tipo %><br />
-              <%= f.select :tipo, lista %>
         </div>
-    </div>
-    <div class="span3">
-        <div class="field">
-          <% origen = {"Antioquia Virtual fase I" => "Antioquia Virtual fase I", "Antioquia Virtual fase 2" => "Antioquia Virtual fase 2","Antioquia Virtual fase 3"=>"Antioquia Virtual fase 3","P_Media"=>"P_Media","Antioquia Digital"=>"Antioquia Digital fase 1"} %>
-          <%= f.label :origen %><br />
-          <%= f.select :origen, origen %>
-
-                  </div>
-    </div>
-
-    <div class="span3">      
-        <div class="field">
-              <%= f.label :fecha_entrega %><br />
-              <%= f.text_field :fecha_entrega %>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-  <div class="span3">   
-      <div class="field">
-        <%= f.label :nombre %><br />
-        <%= f.text_field :nombre %>
       </div>
-  </div>
-  <div class="span3">   
-    <div class="field">
-      <% fabricante = {"Hewlett-Packard" => "Hewlett-Packard", "compaq" => "compaq","Compumax M722SR "=>"Compumax M722SR", "Dell" => "Dell", "Lenovo" => "Lenovo", "Toshiba" => "Toshiba", "Acer" => "Acer", "Asus" => "Asus"} %>
-      <% lista = fabricante.sort %>
-      <%= f.label :fabricante %><br />
-      <%= f.select :fabricante,lista %>
-    </div>
-  </div>
-  <div class="span3">   
-    <div class="field">
-      <%= f.label :modelo %><br />
-      <%= f.text_field :modelo %>
-    </div>
-  </div>
-  <div class="span3">   
-    <div class="field">
-      <% procesador = {"intel celeron" => "intel celeron","Intel dual core" => "Intel dual core", "Intel core2 Quad" => "Intel core2 Quad", "Intel core2 duo" => "Intel core2 duo", "Intel core i3" => "Intel core i3", "Intel core i5" => "Intel core i5", "Intel core i7" => "Intel core i7", "amd athlon 2 x2" => "amd athlon 2 x2", "amd athlon 2 x3" => "amd athlon 2 x3", "amd Athlon 2 X4 240" => "amd Athlon 2 X4 240", "amd Phenom 2 X4 965" => "amd Phenom 2 X4 965"} %>
-        <%= f.label :procesador %><br />
-      <%= f.select :procesador, procesador %>
-      
-    </div>
-  </div>
-<div class="span3">   
-    <div class="field">
-      <% memoria_ram = {"1 Gb" => "1 Gb","2 Gb" => "2 Gb", "3 Gb" => "3 Gb", "4 Gb" => "4 Gb", "6 Gb" => "6 Gb", "8 Gb" => "8 Gb", "16 Gb" => "16 Gb"} %>
-        <%= f.label :memoria_ram %><br />
-      <%= f.select :memoria_ram, memoria_ram %>
-    </div>
-    </div>
-  <div class="span3">   
-    <div class="field">
-      <% disco_duro = {"120 Gb" => "120 Gb","160 Gb" => "160 Gb", "250 Gb" => "250 Gb", "320 Gb" => "320 Gb", "400 Gb" => "400 Gb", "500 Gb" => "500 Gb", "720 Gb" => "720 Gb"} %>
-        <%= f.label :disco_duro %><br />
-      <%= f.select :disco_duro,disco_duro %>
-
-   </div>
-    </div>
-        <div class="span3">  
-      <div class="field">
-        <% display = {"Lcd 10''" => "Lcd 10'' ","Lcd 11.1''" => "Lcd 11.1''", "Lcd 12''" => "Lcd 12''", "Lcd 13.3''" => "Lcd 13.3''", "Lcd 14.1''" => "Lcd 14.1''", "Lcd 15.4''" => "Lcd 15.4''", "Lcd 17''" => "Lcd 17''", "Lcd 18.5''" => "Lcd 18.5''" } %>
-        <%= f.label :display %><br />
-      <%= f.select :display,display %>
-     
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Tipo (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:tipo].any? ? " error" : "" %>">
+            <span style="color:red">
+              <div class="field">
+                <% tipo = {"portatil" => "portatil", "escritorio" => "escritorio"} %>
+                <% lista = tipo.sort %>
+                <%= f.select :tipo, lista %>
+              </div>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-
-<div class="row">
-  <div class="span6">  
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Origen (*) </label>
+        </div>
+      </div>
+      <div class="span4">
         <div class="field">
-        <% sist_operativo = {"Windows XP Profesional" => "Windows XP Profesional","Windows XP Home" => "Windows XP Home", "windows 7 profesional SP1" => "windows 7 profesional SP1", "windows 7 profesional SP2" => "windows 7 profesional SP2", "windows 7 home Basic" => "windows 7 home Basic", "windows 8 Pro" => "windows 8 Pro", "windows 8 RT" => "windows 8 RT"} %>
-        <%= f.label :sist_operativo %><br />
-      <%= f.select :sist_operativo,sist_operativo %>
+          <div class="control-group<%= @equipment.errors[:origen].any? ? " error" : "" %>">
+            <span style="color:red">
+              <div class="field">
+                <% origen = {"Antioquia Virtual fase I" => "Antioquia Virtual fase I", "Antioquia Virtual fase 2" => "Antioquia Virtual fase 2","Antioquia Virtual fase 3"=>"Antioquia Virtual fase 3","P_Media"=>"P_Media","Antioquia Digital"=>"Antioquia Digital fase 1"} %>
+                <%= f.select :origen, origen %>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Fecha de entrega (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:fecha_entrega].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :fecha_entrega, :placeholder => "Fecha de entrega" %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        </div> 
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Nombre (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:nombre].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :nombre, :placeholder => "Nombre" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Fabricante (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:fabricante].any? ? " error" : "" %>">
+            <span style="color:red">
+              <div class="field">
+                <% fabricante = {"Hewlett-Packard" => "Hewlett-Packard", "compaq" => "compaq","Compumax M722SR "=>"Compumax M722SR", "Dell" => "Dell", "Lenovo" => "Lenovo", "Toshiba" => "Toshiba", "Acer" => "Acer", "Asus" => "Asus"} %>
+                <% lista = fabricante.sort %>
+                <%= f.select :fabricante,lista %>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Modelo (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:modelo].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :modelo, :placeholder => "Modelo" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Procesador (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:procesador].any? ? " error" : "" %>">
+            <span style="color:red">
+              <div class="field">
+                <% procesador = {"intel celeron" => "intel celeron","Intel dual core" => "Intel dual core", "Intel core2 Quad" => "Intel core2 Quad", "Intel core2 duo" => "Intel core2 duo", "Intel core i3" => "Intel core i3", "Intel core i5" => "Intel core i5", "Intel core i7" => "Intel core i7", "amd athlon 2 x2" => "amd athlon 2 x2", "amd athlon 2 x3" => "amd athlon 2 x3", "amd Athlon 2 X4 240" => "amd Athlon 2 X4 240", "amd Phenom 2 X4 965" => "amd Phenom 2 X4 965"} %>
+                <%= f.select :procesador, procesador %>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Memoria RAM (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:memoria_ram].any? ? " error" : "" %>">
+            <span style="color:red">
+              <div class="field">
+                <% memoria_ram = {"1 Gb" => "1 Gb","2 Gb" => "2 Gb", "3 Gb" => "3 Gb", "4 Gb" => "4 Gb", "6 Gb" => "6 Gb", "8 Gb" => "8 Gb", "16 Gb" => "16 Gb"} %>
+                <%= f.select :memoria_ram, memoria_ram %>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Disco duro (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:disco_duro].any? ? " error" : "" %>">
+            <span style="color:red">
+              <div class="field">
+                <% disco_duro = {"120 Gb" => "120 Gb","160 Gb" => "160 Gb", "250 Gb" => "250 Gb", "320 Gb" => "320 Gb", "400 Gb" => "400 Gb", "500 Gb" => "500 Gb", "720 Gb" => "720 Gb"} %>
+                <%= f.select :disco_duro,disco_duro %>
+             </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Display (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:display].any? ? " error" : "" %>">
+            <span style="color:red">
+              <div class="field">
+                <% display = {"Lcd 10''" => "Lcd 10'' ","Lcd 11.1''" => "Lcd 11.1''", "Lcd 12''" => "Lcd 12''", "Lcd 13.3''" => "Lcd 13.3''", "Lcd 14.1''" => "Lcd 14.1''", "Lcd 15.4''" => "Lcd 15.4''", "Lcd 17''" => "Lcd 17''", "Lcd 18.5''" => "Lcd 18.5''" } %>
+              <%= f.select :display,display %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Sistema operativo (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @equipment.errors[:sist_operativo].any? ? " error" : "" %>">
+            <div class="field">
+                <% sist_operativo = {"Windows XP Profesional" => "Windows XP Profesional","Windows XP Home" => "Windows XP Home", "windows 7 profesional SP1" => "windows 7 profesional SP1", "windows 7 profesional SP2" => "windows 7 profesional SP2", "windows 7 home Basic" => "windows 7 home Basic", "windows 8 Pro" => "windows 8 Pro", "windows 8 RT" => "windows 8 RT"} %>
+              <%= f.select :sist_operativo,sist_operativo %>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="span12" align="center">
+       <%= f.submit "Enviar", class: "btn btn btn-success" %>
+       <%= link_to 'Cancelar', equipment_index_path, :class => "btn btn btn-success" %>
+    </div>
   </div>
-
-
-  <div class="span12">  
-      <div class="actions">
-        <%= f.submit %>
-      </div> 
-  </div>
-</div>
 
 <% end %>

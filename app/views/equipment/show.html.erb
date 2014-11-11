@@ -1,70 +1,93 @@
-<p id="notice"><%= notice %></p>
+  <div class="page-header">
+        <h1>Ver Subregión</h1>
+  </div>
 
-<p>
-  <b>Dane sede:</b>
-  <%= @equipment.dane_sede %>
-</p>
+  <% if notice %>
+  <div class="row">
+      <div class="span12">
+        <div class="alert alert-success" role="alert">
+          <p id="notice"><%= notice %></p>
+        </div>
+      </div>
+   </div>
+   <% end %>
 
-<p>
-  <b>Tipo:</b>
-  <%= @equipment.tipo %>
-</p>
+<div class="row">
+  <div class="span6">
+    <p>
+      <b>Dane sede:</b>
+      <%= @equipment.dane_sede %>
+    </p>
 
-<p>
-  <b>Origen:</b>
-  <%= @equipment.origen %>
-</p>
+    <p>
+      <b>Tipo:</b>
+      <%= @equipment.tipo %>
+    </p>
 
-<p>
-  <b>Fecha entrega:</b>
-  <%= @equipment.fecha_entrega %>
-</p>
+    <p>
+      <b>Origen:</b>
+      <%= @equipment.origen %>
+    </p>
 
-<p>
-  <b>Nombre:</b>
-  <%= @equipment.nombre %>
-</p>
+    <p>
+      <b>Fecha entrega:</b>
+      <%= @equipment.fecha_entrega %>
+    </p>
 
-<p>
-  <b>Fabricante:</b>
-  <%= @equipment.fabricante %>
-</p>
+    <p>
+      <b>Nombre:</b>
+      <%= @equipment.nombre %>
+    </p>
 
-<p>
-  <b>Modelo:</b>
-  <%= @equipment.modelo %>
-</p>
+    <p>
+      <b>Fabricante:</b>
+      <%= @equipment.fabricante %>
+    </p>
+  </div>
 
-<p>
-  <b>Serial:</b>
-  <%= @equipment.serial %>
-</p>
+  <div class="span6">
+    <p>
+      <b>Modelo:</b>
+      <%= @equipment.modelo %>
+    </p>
 
-<p>
-  <b>Procesador:</b>
-  <%= @equipment.procesador %>
-</p>
+    <p>
+      <b>Serial:</b>
+      <%= @equipment.serial %>
+    </p>
 
-<p>
-  <b>Memoria ram:</b>
-  <%= @equipment.memoria_ram %>
-</p>
+    <p>
+      <b>Procesador:</b>
+      <%= @equipment.procesador %>
+    </p>
 
-<p>
-  <b>Disco duro:</b>
-  <%= @equipment.disco_duro %>
-</p>
+    <p>
+      <b>Memoria ram:</b>
+      <%= @equipment.memoria_ram %>
+    </p>
 
-<p>
-  <b>Display:</b>
-  <%= @equipment.display %>
-</p>
+    <p>
+      <b>Disco duro:</b>
+      <%= @equipment.disco_duro %>
+    </p>
 
-<p>
-  <b>Sist operativo:</b>
-  <%= @equipment.sist_operativo %>
-</p>
+    <p>
+      <b>Display:</b>
+      <%= @equipment.display %>
+    </p>
 
+    <p>
+      <b>Sist operativo:</b>
+      <%= @equipment.sist_operativo %>
+    </p>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
-<%= link_to 'Back', equipment_index_path %>
+<br />
+
+<div class="row">
+  <div class="span12" align="center">
+    <%= link_to 'Editar', edit_equipment_path(@equipment), :class => "btn btn btn-success" %>
+    <%= link_to 'Regresar', equipment_index_path, :class => "btn btn btn-success" %>
+  </div>
+</div>

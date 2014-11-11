@@ -44,7 +44,7 @@ class SubregionsController < ApplicationController
 
     respond_to do |format|
       if @subregion.save
-        format.html { redirect_to @subregion, notice: 'Subregion was successfully created.' }
+        format.html { redirect_to @subregion, notice: 'Registro creado satisfactoriamente.' }
         format.json { render json: @subregion, status: :created, location: @subregion }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class SubregionsController < ApplicationController
 
     respond_to do |format|
       if @subregion.update_attributes(params[:subregion])
-        format.html { redirect_to @subregion, notice: 'Subregion was successfully updated.' }
+        format.html { redirect_to @subregion, notice: 'Registro editado satisfactoriamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

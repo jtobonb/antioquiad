@@ -1,41 +1,118 @@
 <%= form_for(@supplier) do |f| %>
   <% if @supplier.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
-
-      <ul>
-      <% @supplier.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+      <div class="span12">
+        <div class="alert alert-danger" role="alert">
+          <div id="error_explanation">
+            <ul>
+            <% @supplier.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre_programa %><br />
-    <%= f.text_field :nombre_programa %>
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Nombre del programa (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @supplier.errors[:nombre_programa].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :nombre_programa, :placeholder => "Nombre del programa" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Entidad ejecutora (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @supplier.errors[:entidad_ejecutora].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :entidad_ejecutora, :placeholder => "Entidad ejecutora" %>
+              </span>
+          </div>
+        </div>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :entidad_ejecutora %><br />
-    <%= f.text_field :entidad_ejecutora %>
+
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Fase (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @supplier.errors[:fase].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :fase, :placeholder => "Fase" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Fecha de Entrega (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @supplier.errors[:fecha_entrega].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :fecha_entrega, :placeholder => "Entidad ejecutora" %>
+              </span>
+          </div>
+        </div>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :fase %><br />
-    <%= f.text_field :fase %>
+
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Responsable (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @supplier.errors[:responsable].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :responsable, :placeholder => "Responsable" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Cantidad (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @supplier.errors[:cantidad].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :cantidad, :placeholder => "Cantidad" %>
+              </span>
+          </div>
+        </div>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :fecha_entrega %><br />
-    <%= f.text_field :fecha_entrega %>
+
+  <div class="row">
+    <div class="span12" align="center">
+      <%= f.submit "Enviar", class: "btn btn btn-success" %>
+      <%= link_to 'Cancelar', suppliers_path, :class => "btn btn btn-success" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :responsable %><br />
-    <%= f.text_field :responsable %>
-  </div>
-  <div class="field">
-    <%= f.label :cantidad %><br />
-    <%= f.number_field :cantidad %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

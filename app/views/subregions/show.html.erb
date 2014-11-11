@@ -1,15 +1,37 @@
-<p id="notice"><%= notice %></p>
+  <div class="page-header">
+        <h1>Ver Subregión</h1>
+  </div>
 
-<p>
-  <b>Cod subregion:</b>
-  <%= @subregion.cod_subregion %>
-</p>
+  <% if notice %>
+  <div class="row">
+      <div class="span12">
+        <div class="alert alert-success" role="alert">
+          <p id="notice"><%= notice %></p>
+        </div>
+      </div>
+   </div>
+   <% end %>
 
-<p>
-  <b>Nombre subregion:</b>
-  <%= @subregion.nombre_subregion %>
-</p>
+  <div class="row">
+    <div class="span6">
+		<p>
+		  <b>Código subregion:</b>
+		  <%= @subregion.cod_subregion %>
+		</p>
+	</div>
+   <div class="span6">
+	<p>
+	  <b>Nombre subregion:</b>
+	  <%= @subregion.nombre_subregion %>
+	</p>
+   </div>
+</div>
 
+<br />
 
-<%= link_to 'Edit', edit_subregion_path(@subregion) %> |
-<%= link_to 'Back', subregions_path %>
+  <div class="row">
+    <div class="span12" align="center">
+      <%= link_to 'Editar', edit_subregion_path(@subregion), :class => "btn btn btn-success" %>
+      <%= link_to 'Regresar', subregions_path, :class => "btn btn btn-success" %>
+    </div>
+  </div>

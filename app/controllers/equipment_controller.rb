@@ -100,7 +100,7 @@ class EquipmentController < ApplicationController
 
     respond_to do |format|
       if @equipment.save
-        format.html { redirect_to @equipment, notice: 'Equipment was successfully created.' }
+        format.html { redirect_to @equipment, notice: 'Registro creado satisfactoriamente.' }
         format.json { render json: @equipment, status: :created, location: @equipment }
       else
         format.html { render action: "new" }
@@ -116,7 +116,7 @@ class EquipmentController < ApplicationController
 
     respond_to do |format|
       if @equipment.update_attributes(params[:equipment])
-        format.html { redirect_to @equipment, notice: 'Equipment was successfully updated.' }
+        format.html { redirect_to @equipment, notice: 'Registro editado satisfactoriamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

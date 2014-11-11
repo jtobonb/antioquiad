@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'devise'
-
+gem 'client_side_validations'
 gem 'rails', '3.2.19'
+gem 'custom_error_message', '~> 1.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

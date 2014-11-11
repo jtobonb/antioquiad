@@ -47,7 +47,7 @@ class PrincipalEstablecsController < ApplicationController
 
     respond_to do |format|
       if @principal_establec.save
-        format.html { redirect_to @principal_establec, notice: 'Principal establec was successfully created.' }
+        format.html { redirect_to @principal_establec, notice: 'Registro creado satisfactoriamente.' }
         format.json { render json: @principal_establec, status: :created, location: @principal_establec }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class PrincipalEstablecsController < ApplicationController
 
     respond_to do |format|
       if @principal_establec.update_attributes(params[:principal_establec])
-        format.html { redirect_to @principal_establec, notice: 'Principal establec was successfully updated.' }
+        format.html { redirect_to @principal_establec, notice: 'Registro editado satisfactoriamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

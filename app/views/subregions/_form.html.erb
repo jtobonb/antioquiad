@@ -1,25 +1,56 @@
 <%= form_for(@subregion) do |f| %>
   <% if @subregion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@subregion.errors.count, "error") %> prohibited this subregion from being saved:</h2>
-
-      <ul>
-      <% @subregion.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+      <div class="span12">
+        <div class="alert alert-danger" role="alert">
+          <div id="error_explanation">
+            <ul>
+            <% @subregion.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cod_subregion %><br />
-    <%= f.number_field :cod_subregion %>
+<div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Código Subregión (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @subregion.errors[:cod_subregion].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :cod_subregion, :placeholder => "Código Subregión" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Nombre Subregión (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @subregion.errors[:nombre_subregion].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :nombre_subregion, :placeholder => "Nombre Subregión" %>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="span12" align="center">
+       <%= f.submit "Enviar", class: "btn btn btn-success" %>
+       <%= link_to 'Cancelar', subregions_path, :class => "btn btn btn-success" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :nombre_subregion %><br />
-    <%= f.text_field :nombre_subregion %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

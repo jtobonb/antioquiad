@@ -14,3 +14,4 @@
 //= require bootstrap.min
 //= require jquery_ujs
 = require_tree
+= require_rails.validations

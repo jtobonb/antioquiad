@@ -1,29 +1,75 @@
 <%= form_for(@municipio) do |f| %>
   <% if @municipio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@municipio.errors.count, "error") %> prohibited this municipio from being saved:</h2>
-
-      <ul>
-      <% @municipio.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div class="row">
+      <div class="span12">
+        <div class="alert alert-danger" role="alert">
+          <div id="error_explanation">
+            <ul>
+            <% @municipio.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cod_municipio %><br />
-    <%= f.number_field :cod_municipio %>
+  <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Código del municipio (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @municipio.errors[:cod_municipio].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :cod_municipio, :placeholder => "Código del municipio" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="field" align="right">
+          <label>Código de la Subregión (*) </label>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="field">
+          <div class="control-group<%= @municipio.errors[:cod_subregion].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :cod_subregion, :placeholder => "Código de la Subregión" %>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span2">
+        <div align="right"> 
+          <label>Nombre del municipio (*) </label>
+        </div>
+      </div>
+      <div class="span10">
+        <div class="field">
+          <div class="control-group<%= @municipio.errors[:nombre_municipio].any? ? " error" : "" %>">
+            <span style="color:red">
+              <%= f.text_field :nombre_municipio, :placeholder => "Nombre del municipio" %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<br />
+
+  <div class="row">
+    <div class="span12" align="center">
+       <%= f.submit "Enviar", class: "btn btn btn-success" %>
+       <%= link_to 'Cancelar', municipios_path, :class => "btn btn btn-success" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :nombre_municipio %><br />
-    <%= f.text_field :nombre_municipio %>
-  </div>
-  <div class="field">
-    <%= f.label :cod_subregion %><br />
-    <%= f.text_field :cod_subregion %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

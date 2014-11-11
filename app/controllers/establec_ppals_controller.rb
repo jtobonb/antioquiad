@@ -44,7 +44,7 @@ class EstablecPpalsController < ApplicationController
 
     respond_to do |format|
       if @establec_ppal.save
-        format.html { redirect_to @establec_ppal, notice: 'Establec ppal was successfully created.' }
+        format.html { redirect_to @establec_ppal, notice: 'Registro creado satisfactoriamente.' }
         format.json { render json: @establec_ppal, status: :created, location: @establec_ppal }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class EstablecPpalsController < ApplicationController
 
     respond_to do |format|
       if @establec_ppal.update_attributes(params[:establec_ppal])
-        format.html { redirect_to @establec_ppal, notice: 'Establec ppal was successfully updated.' }
+        format.html { redirect_to @establec_ppal, notice: 'Registro editado satisfactoriamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
