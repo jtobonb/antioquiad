@@ -86,10 +86,7 @@ class PrincipalEstablecsController < ApplicationController
 
   def informacion_usuario
     if current_user.superadmin?
-       @nombre = "Administrador"
-       @permisos = "Super Administrador"
-       @entidad = "Gobernacion de Antioquia"
-       @correo = current_user.email
+      @principal_establecs = PrincipalEstablec.joins()
     else
       @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
       @dane_establec= @grab_dane_establecimiento[0].dane_establec

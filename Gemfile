@@ -11,6 +11,8 @@ gem 'custom_error_message', '~> 1.1.1'
 gem 'sqlite3'
 gem 'activeadmin'
 gem 'meta_search', '>=1.1.0.pre'
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

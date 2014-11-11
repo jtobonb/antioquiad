@@ -14,6 +14,7 @@
       </div>
     </div>
   <% end %>
+  
 
   <div class="row">
       <div class="span2">
@@ -60,7 +61,7 @@
         <div class="field">
           <div class="control-group<%= @equipment.errors[:origen].any? ? " error" : "" %>">
             <span style="color:red">
-              <div class="field">
+              <div class="field" >  
                 <% origen = {"Antioquia Virtual fase I" => "Antioquia Virtual fase I", "Antioquia Virtual fase 2" => "Antioquia Virtual fase 2","Antioquia Virtual fase 3"=>"Antioquia Virtual fase 3","P_Media"=>"P_Media","Antioquia Digital"=>"Antioquia Digital fase 1"} %>
                 <%= f.select :origen, origen %>
               </div>
@@ -71,13 +72,14 @@
       <div class="span2">
         <div class="field" align="right">
           <label>Fecha de entrega (*) </label>
+
         </div>
       </div>
       <div class="span4">
         <div class="field">
           <div class="control-group<%= @equipment.errors[:fecha_entrega].any? ? " error" : "" %>">
             <span style="color:red">
-              <%= f.text_field :fecha_entrega, :placeholder => "Fecha de entrega" %>
+              <input type="text" data-provide='datepicker' data-date-format="dd/mm/yyyy" placeholder="Fecha" class="datepicker">
             </span>
           </div>
         </div>
@@ -232,3 +234,4 @@
   </div>
 
 <% end %>
+

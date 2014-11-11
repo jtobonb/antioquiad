@@ -1,20 +1,22 @@
 
 <h1>Listing equipment</h1>
-<table>
+<table class="table table-bordered table-striped">
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Dane sede</th>
+    <th>Tipo</th>
+    <th>Origen</th>
+    <th><div align="center"><a href="#" title="Buscar"><i class="icon-search"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Editar"><i class="icon-edit"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Eliminar"><i class="icon-remove"></i></a></div></th>
   </tr>
 
+
+<% @principal_establecs.each do |usuario| %>
   <tr>
-    <td><%= @name %></td>
-    <td><%= @Entidad%></td>
-    <td><%= @permisos %></td>
+    <td><%= usuario.email %></td>
+    
+ </tr>
+ </table>
+ <%end%>
 
-  </tr>
-</table>
-
-<br />
-
-<%= link_to 'New Equipment', new_equipment_path %>
+<%= link_to 'New User', new_user_path %>

@@ -1,28 +1,20 @@
 
 <h1>INFORMACION USUARIO</h1>
+
 <table>
   <tr>
-    <th>nombre</th>
-   
-    <th>Permisos</th>
-
-     <th>Entidad</th>
-
-     <th>correo</th>
+    <th>Correo</th>
   </tr>
 
+<% @principal_establecs.each do |usuario| %>
   <tr>
-    <td><%= @nombre %></td>
-  
-    <td><%= @permisos %></td>
-
-      <td><%= @entidad %></td>
-
-      <td><%= @correo %></td>
-
+    <td><%= usuario.email %></td>
   </tr>
-</table>
 
 <br />
+</table>
+
+ <%end%>
+
 
 <%= link_to 'New Equipment', new_equipment_path %>
