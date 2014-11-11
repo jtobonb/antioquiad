@@ -28,11 +28,11 @@
     </div>
     <div class="span3">
         <div class="field">
-          <% origen = {"Antioquia Virtual fase I" => "Antioquia Virtual fase I", "Antioquia Virtual fase 2" => "Antioquia Virtual fase 2","Antioquia Virtual fase 3"=>"Antioquia Virtual fase 3","MEDIA"=>"P_MEDIA","ANTIOQUIA DIGITAL"=>"ANTIOQUIA_DIGITAL fase 1"} %>
-          <% lista = origen.sort %>
+          <% origen = {"Antioquia Virtual fase I" => "Antioquia Virtual fase I", "Antioquia Virtual fase 2" => "Antioquia Virtual fase 2","Antioquia Virtual fase 3"=>"Antioquia Virtual fase 3","P_Media"=>"P_Media","Antioquia Digital"=>"Antioquia Digital fase 1"} %>
           <%= f.label :origen %><br />
-          <%= f.select :origen,lista %>
-        </div>
+          <%= f.select :origen, origen %>
+
+                  </div>
     </div>
 
     <div class="span3">      
@@ -52,7 +52,7 @@
   </div>
   <div class="span3">   
     <div class="field">
-      <% fabricante = {"Hewlett-Packard" => "Hewlett-Packard", "compaq" => "compaq","Compumax M722SR "=>"Compumax M722SR "} %>
+      <% fabricante = {"Hewlett-Packard" => "Hewlett-Packard", "compaq" => "compaq","Compumax M722SR "=>"Compumax M722SR", "Dell" => "Dell", "Lenovo" => "Lenovo", "Toshiba" => "Toshiba", "Acer" => "Acer", "Asus" => "Asus"} %>
       <% lista = fabricante.sort %>
       <%= f.label :fabricante %><br />
       <%= f.select :fabricante,lista %>
@@ -66,36 +66,33 @@
   </div>
   <div class="span3">   
     <div class="field">
-      <%= f.label :serial %><br />
-      <%= f.text_field :serial %>
+      <% procesador = {"intel celeron" => "intel celeron","Intel dual core" => "Intel dual core", "Intel core2 Quad" => "Intel core2 Quad", "Intel core2 duo" => "Intel core2 duo", "Intel core i3" => "Intel core i3", "Intel core i5" => "Intel core i5", "Intel core i7" => "Intel core i7", "amd athlon 2 x2" => "amd athlon 2 x2", "amd athlon 2 x3" => "amd athlon 2 x3", "amd Athlon 2 X4 240" => "amd Athlon 2 X4 240", "amd Phenom 2 X4 965" => "amd Phenom 2 X4 965"} %>
+        <%= f.label :procesador %><br />
+      <%= f.select :procesador, procesador %>
+      
     </div>
   </div>
-</div>
-
-  <div class="row">
-    <div class="span3">   
-        <div class="field">
-          <%= f.label :procesador %><br />
-          <%= f.text_field :procesador %>
-        </div>
-    </div>
-    <div class="span3">   
-      <div class="field">
+<div class="span3">   
+    <div class="field">
+      <% memoria_ram = {"1 Gb" => "1 Gb","2 Gb" => "2 Gb", "3 Gb" => "3 Gb", "4 Gb" => "4 Gb", "6 Gb" => "6 Gb", "8 Gb" => "8 Gb", "16 Gb" => "16 Gb"} %>
         <%= f.label :memoria_ram %><br />
-        <%= f.text_field :memoria_ram %>
-      </div>
+      <%= f.select :memoria_ram, memoria_ram %>
     </div>
-    <div class="span3">  
-      <div class="field">
+    </div>
+  <div class="span3">   
+    <div class="field">
+      <% disco_duro = {"120 Gb" => "120 Gb","160 Gb" => "160 Gb", "250 Gb" => "250 Gb", "320 Gb" => "320 Gb", "400 Gb" => "400 Gb", "500 Gb" => "500 Gb", "720 Gb" => "720 Gb"} %>
         <%= f.label :disco_duro %><br />
-        <%= f.text_field :disco_duro %>
-      </div> 
-    </div>
+      <%= f.select :disco_duro,disco_duro %>
 
-    <div class="span3">  
+   </div>
+    </div>
+        <div class="span3">  
       <div class="field">
+        <% display = {"Lcd 10''" => "Lcd 10'' ","Lcd 11.1''" => "Lcd 11.1''", "Lcd 12''" => "Lcd 12''", "Lcd 13.3''" => "Lcd 13.3''", "Lcd 14.1''" => "Lcd 14.1''", "Lcd 15.4''" => "Lcd 15.4''", "Lcd 17''" => "Lcd 17''", "Lcd 18.5''" => "Lcd 18.5''" } %>
         <%= f.label :display %><br />
-        <%= f.text_field :display %>
+      <%= f.select :display,display %>
+     
       </div>
     </div>
   </div>
@@ -104,8 +101,10 @@
 <div class="row">
   <div class="span6">  
         <div class="field">
-          <%= f.label :sist_operativo %><br />
-          <%= f.text_field :sist_operativo %>
+        <% sist_operativo = {"Windows XP Profesional" => "Windows XP Profesional","Windows XP Home" => "Windows XP Home", "windows 7 profesional SP1" => "windows 7 profesional SP1", "windows 7 profesional SP2" => "windows 7 profesional SP2", "windows 7 home Basic" => "windows 7 home Basic", "windows 8 Pro" => "windows 8 Pro", "windows 8 RT" => "windows 8 RT"} %>
+        <%= f.label :sist_operativo %><br />
+      <%= f.select :sist_operativo,sist_operativo %>
+
         </div> 
   </div>
 
