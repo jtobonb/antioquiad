@@ -1,7 +1,8 @@
-
-<h1>LISTADO DE EQUIPOS POR FABRICANTE</h1>
+<div class="page-header">
+        <h1>Equipos por fabricante</h1>
+</div>
 <% unless @equipment.empty?%>
-<table>
+<table class="table table-bordered table-striped">
   <tr>
     <th>Dane sede</th>
     <th>Tipo</th>
@@ -9,6 +10,7 @@
     <th>Fecha entrega</th>
     <th>Nombre</th>
     <th>Fabricante</th>
+    <!--
     <th>Modelo</th>
     <th>Serial</th>
     <th>Procesador</th>
@@ -16,9 +18,10 @@
     <th>Disco duro</th>
     <th>Display</th>
     <th>Sist operativo</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    -->
+    <th><div align="center"><a href="#" title="Buscar"><i class="icon-search"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Editar"><i class="icon-edit"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Eliminar"><i class="icon-remove"></i></a></div></th>
   </tr>
 
 <% @equipment.each do |equipment| %>
@@ -29,6 +32,7 @@
     <td><%= equipment.fecha_entrega %></td>
     <td><%= equipment.nombre %></td>
     <td><%= equipment.fabricante.gsub(/\s+/, "") %></td>
+    <!--
     <td><%= equipment.modelo %></td>
     <td><%= equipment.serial %></td>
     <td><%= equipment.procesador %></td>
@@ -36,9 +40,10 @@
     <td><%= equipment.disco_duro %></td>
     <td><%= equipment.display %></td>
     <td><%= equipment.sist_operativo %></td>
-    <td><%= link_to 'Show', equipment %></td>
-    <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
-    <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    -->
+    <td><%= link_to 'Mostrar', equipment %></td>
+    <td><%= link_to 'Editar', edit_equipment_path(equipment) %></td>
+    <td><%= link_to 'Eliminar', equipment, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
   </tr>
 <% end %>
 <% else%>

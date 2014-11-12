@@ -231,13 +231,13 @@ body {
 }
 
 a {
-  color: #0088cc;
+  color: #00750E;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #005580;
+  color: #00A013;
   text-decoration: underline;
 }
 
@@ -708,7 +708,7 @@ a.text-error:focus {
 
 a.text-info:hover,
 a.text-info:focus {
-  color: #2d6987;
+  color: #2D8842;
 }
 
 .text-success {
@@ -2960,12 +2960,12 @@ table th[class*="span"],
 .dropdown-submenu:focus > a {
   color: #ffffff;
   text-decoration: none;
-  background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
-  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-color: #5EBD5E;
+  background-image: -moz-linear-gradient(top, #5EBD5E, #51A351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5EBD5E), to(#51A351));
+  background-image: -webkit-linear-gradient(top, #5EBD5E, #51A351);
+  background-image: -o-linear-gradient(top, #5EBD5E, #51A351);
+  background-image: linear-gradient(to bottom, #5EBD5E, #51A351);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }

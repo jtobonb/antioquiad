@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <style type="text/css">
+  
+
+  </style>
 </head>
 <body>
 <div class="container">
@@ -19,7 +24,7 @@
         <div class="navbar">
           <div class="navbar-inner">
           <div class="container">
-            <a class="brand"><%= image_tag("logo.png", :width => 90)%></a>
+            <a class="brand"><%= image_tag("logo.PNG", :width => 90)%></a>
 
             <% if user_signed_in? %>
             <ul class="nav pull-left">
@@ -137,20 +142,18 @@
               <%= image_tag("seduca.png", :width => 700)%>
           </div>
           <div class="span8">
-            <h9>
+            <h10>
               <p class="muted credit">Secretaría de Educación de Antioquia | Antioquia La Más Educada</p>
-                <p class="muted credit">Calle 42 n° 52 - 106 Centro Administrativo Departamental "José María Córdova"</p>
+                <p class="muted credit">Calle 42N° 52-106 Centro Administrativo Departamental "José María Córdova"</p>
                 <p class="muted credit">Horario de Lunes a Viernes de 8:00 A.M. a 10:30 A.M. y 2:00 P.M. a 4:00 P.M.</p>
-                <p class="muted credit"> Contacto: (+57 4) 383 84 11 | (+57 4) 383 84 80 | (+57 4) 383 8400</p>
-                <p class="muted credit">Antioquia, Colombia - Suramerica</p>
-            </h9>
+                <p class="muted credit"> Contacto: (+57 4) 383 84 11 - (+57 4) 383 84 80 - (+57 4) 383 8400 | Antioquia, Colombia - Suramerica</p>
+                <p class="muted credit"></p>
+            </h10>
           </div>
         </div>  
       </div>
     </div>
   </footer>
-
 </div>
-
 </body>
 </html>
