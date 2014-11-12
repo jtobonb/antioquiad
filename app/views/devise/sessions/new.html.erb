@@ -1,6 +1,8 @@
 <div class="row">
 	<div class="span12" align="center">
-		<h2>Iniciar sesion</h2>
+		<div class="page-header">
+        	<h1>Iniciar sesión</h1>
+		</div>
 		<%= devise_error_messages! %>
 		
 		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -15,7 +17,7 @@
 			    </div>
 			<% end -%>
 
-			<div><%= f.submit "Iniciar sesion", :class => "btn" %></div>
+			<div><%= f.submit "Iniciar sesion", :class => "btn btn btn-success" %></div>
 		<% end %>
 
 		<%= render "devise/shared/links" %>
