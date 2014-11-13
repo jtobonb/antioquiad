@@ -1,0 +1,4 @@
+<%= collection_select(:nombre_subregion, :cod_subregion, Subregion.all, :id, :nombre_subregion) %>
+<%= collection_select(:nombre_municipio, :cod_municipio, Municipio.all, :id, :nombre_municipio) %>
+<%= collection_select(:dane_establec, :cod_municipio, PrincipalEstablec.all, :id, :dane_establec) %>
+<%= collection_select(:dane_sede, :dane_establec, Sede.all, :id, :dane_sede) %>

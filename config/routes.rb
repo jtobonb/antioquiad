@@ -11,6 +11,7 @@ Antioquiad::Application.routes.draw do
   get '/equipment/programa/:fecha_entrega', to: 'equipment#fecha'
   get '/equipment/fabricante/:fabricante', to: 'equipment#fabricante'
   get '/principal_establecs/informacion_usuario', to: 'principal_establecs#informacion_usuario'
+  get '/equipment/reportes', to: 'equipment#reportes'
   resources :municipios
   resources :subregions
   resources :suppliers

@@ -4,12 +4,14 @@ class EquipmentController < ApplicationController
     def tipo
     if current_user.superadmin?
     @equipment = Equipment.where(tipo: params[:tipo])
+    @equipment_conteo  = @equipment.count
     else
       @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
       @dane_establec= @grab_dane_establecimiento[0].dane_establec
       @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
       @dane_sede = @grab_dane_sede[0].dane_sede
-      @equipment = Equipment.where(dane_sede: [@dane_sede])
+      @equipment = Equipment.where(dane_sede: [@dane_sede]).where(tipo: params[:tipo])
+      @equipment_conteo  = @equipment.count
 
     end
   end
@@ -17,27 +19,36 @@ class EquipmentController < ApplicationController
     def programa
     if current_user.superadmin?
        @equipment = Equipment.where(origen: params[:origen])
+       @equipment_conteo  = @equipment.count
     else
       @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
       @dane_establec= @grab_dane_establecimiento[0].dane_establec
       @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
       @dane_sede = @grab_dane_sede[0].dane_sede
-      @equipment = Equipment.where(dane_sede: [@dane_sede])
+      @equipment = Equipment.where(dane_sede: [@dane_sede]).where(origen: params[:origen])
+      @equipment_conteo  = @equipment.count
 
     end
   end
+
+      def reportes
+
+      end
+
 
 
   
     def fecha
     if current_user.superadmin?
        @equipment = Equipment.where(fecha_entrega: params[:fecha_entrega])
+       @equipment_conteo  = @equipment.count
     else
       @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
       @dane_establec= @grab_dane_establecimiento[0].dane_establec
       @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
       @dane_sede = @grab_dane_sede[0].dane_sede
-      @equipment = Equipment.where(dane_sede: [@dane_sede])
+      @equipment = Equipment.where(dane_sede: [@dane_sede]).where(fecha_entrega: params[:fecha_entrega])
+      @equipment_conteo  = @equipment.count
 
     end
   end
@@ -45,12 +56,14 @@ class EquipmentController < ApplicationController
     def fabricante
     if current_user.superadmin?
        @equipment = Equipment.where(fabricante: params[:fabricante])
+       @equipment_conteo  = @equipment.count
     else
       @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
       @dane_establec= @grab_dane_establecimiento[0].dane_establec
       @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
       @dane_sede = @grab_dane_sede[0].dane_sede
-      @equipment = Equipment.where(dane_sede: [@dane_sede])
+      @equipment = Equipment.where(dane_sede: [@dane_sede]).where(fabricante: params[:fabricante])
+      @equipment_conteo  = @equipment.count
 
     end
   end
@@ -58,12 +71,15 @@ class EquipmentController < ApplicationController
     def index
     if current_user.superadmin?
     @equipment = Equipment.all
+    @equipment_conteo = Equipment.count unless @equipment.empty?
     else
       @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
       @dane_establec= @grab_dane_establecimiento[0].dane_establec
       @grab_dane_sede = Sede.where(dane_establec: @dane_establec)
       @dane_sede = @grab_dane_sede[0].dane_sede
       @equipment = Equipment.where(dane_sede: [@dane_sede])
+      @equipment_conteo  = @equipment.count
+     
 
     end
   end
