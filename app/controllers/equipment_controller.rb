@@ -68,7 +68,7 @@ class EquipmentController < ApplicationController
     end
   end
 
-    def index
+  def index
     if current_user.superadmin?
     @equipment = Equipment.all
     @equipment_conteo = Equipment.count unless @equipment.empty?
@@ -79,6 +79,7 @@ class EquipmentController < ApplicationController
       @dane_sede = @grab_dane_sede[0].dane_sede
       @equipment = Equipment.where(dane_sede: [@dane_sede])
       @equipment_conteo  = @equipment.count
+      @param_dane = Equipment.where(dane_sede: params[:dane_sede])  
      
 
     end
@@ -97,6 +98,7 @@ class EquipmentController < ApplicationController
   # GET /equipment/new.json
   def new
     @equipment = Equipment.new
+    @param_dane =  params[:dane_sede]
 
     respond_to do |format|
       format.html # new.html.erb

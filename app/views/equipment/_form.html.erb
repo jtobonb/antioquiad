@@ -26,7 +26,7 @@
         <div class="field">
           <div class="control-group<%= @equipment.errors[:dane_sede].any? ? " error" : "" %>">
             <span style="color:red">
-              <%= f.text_field :dane_sede, :placeholder => "Dane sede" %>
+              <%= f.text_field :dane_sede, :placeholder => "Dane sede", value:@param_dane %>
             </span>
           </div>
         </div>

@@ -6,6 +6,7 @@ Antioquiad::Application.routes.draw do
 # get '/equipment/tipo', to: 'equipment#tipo'
 
   ActiveAdmin.routes(self)
+  get '/equipment/new/:dane_sede', to: 'equipment#new'
   get '/equipment/tipo/:tipo', to: 'equipment#tipo'
   get '/equipment/programa/:origen', to: 'equipment#programa'
   get '/equipment/programa/:fecha_entrega', to: 'equipment#fecha'

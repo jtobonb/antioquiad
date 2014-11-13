@@ -35,7 +35,7 @@ Cantidad Equipos = <%= @equipment_conteo %>
 
 <% @equipment.each do |equipment| %>
   <tr>
-    <td><%= equipment.dane_sede %></td>
+   <td> <a href="/equipment/new/<%= equipment.dane_sede %>"><%= equipment.dane_sede %></a></td>
     <td><%= equipment.tipo %></td>
     <td><%= equipment.origen %></td>
     <td><%= equipment.fecha_entrega %></td>
