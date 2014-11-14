@@ -13,6 +13,21 @@ class SedesController < ApplicationController
                             equipment.tipo, equipment.disco_duro, equipment.nombre as 'Nombre_Equipo', equipment.origen,
                              equipment.fecha_entrega, equipment.fabricante")
                           .where(:sedes => {:dane_sede => params[:dane_sede]})
+
+  #Equipos por origen
+  @subregions_conteo = @sedes.count
+  @subregions_conteo_media = @sedes.where(:equipment => {:origen => "P_MEDIA"}).count
+  @subregions_conteo_virtual1 = @sedes.where(:equipment => {:origen => "Antioquia Virtual fase I"}).count
+  @subregions_conteo_virtual2 = @sedes.where(:equipment => {:origen => "Antioquia Virtual fase 2"}).count
+  @subregions_conteo_virtual3 = @sedes.where(:equipment => {:origen => "Antioquia Virtual fase 3"}).count
+  @subregions_conteo_antioquia = @sedes.where(:equipment => {:origen => "ANTIOQUIA_DIGITAL fase 1"}).count
+#Equipos por tipo 
+  @subregions_conteo_escritorio = @sedes.where(:equipment => {:tipo => "escritorio"}).count
+  @subregions_conteo_portatil = @sedes.where(:equipment => {:tipo => "portatil"}).count
+  #Equipos por Fabricante 
+  @subregions_conteo_hp = @sedes.where(:equipment => {:fabricante => "Hewlett-Packard"}).count
+  @subregions_conteo_compaq = @sedes.where(:equipment => {:fabricante => "compaq"}).count
+  @subregions_conteo_compumax = @sedes.where(:equipment => {:fabricante => "Compumax M722SR"}).count                        
   end
 
 

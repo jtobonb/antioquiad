@@ -24,6 +24,20 @@ class MunicipiosController < ApplicationController
                              equipment.fecha_entrega, equipment.fabricante")
                           .where(:municipios => {:nombre_municipio => params[:municipio]})
 
+  #Equipos por origen
+  @subregions_conteo = @municipios.count
+  @subregions_conteo_media = @municipios.where(:equipment => {:origen => "P_MEDIA"}).count
+  @subregions_conteo_virtual1 = @municipios.where(:equipment => {:origen => "Antioquia Virtual fase I"}).count
+  @subregions_conteo_virtual2 = @municipios.where(:equipment => {:origen => "Antioquia Virtual fase 2"}).count
+  @subregions_conteo_virtual3 = @municipios.where(:equipment => {:origen => "Antioquia Virtual fase 3"}).count
+  @subregions_conteo_antioquia = @municipios.where(:equipment => {:origen => "ANTIOQUIA_DIGITAL fase 1"}).count
+#Equipos por tipo 
+  @subregions_conteo_escritorio = @municipios.where(:equipment => {:tipo => "escritorio"}).count
+  @subregions_conteo_portatil = @municipios.where(:equipment => {:tipo => "portatil"}).count
+  #Equipos por Fabricante 
+  @subregions_conteo_hp = @municipios.where(:equipment => {:fabricante => "Hewlett-Packard"}).count
+  @subregions_conteo_compaq = @municipios.where(:equipment => {:fabricante => "compaq"}).count
+  @subregions_conteo_compumax = @municipios.where(:equipment => {:fabricante => "Compumax M722SR"}).count
                           
                           
   end

@@ -13,7 +13,24 @@ class SubregionsController < ApplicationController
                             equipment.tipo, equipment.disco_duro, equipment.nombre as 'Nombre_Equipo', equipment.origen,
                              equipment.fecha_entrega, equipment.fabricante")
                           .where(:subregions => {:nombre_subregion => params[:subregion]})
-                          
+
+#Equipos por origen
+  @subregions_conteo = @subregions.count
+  @subregions_conteo_media = @subregions.where(:equipment => {:origen => "P_MEDIA"}).count
+  @subregions_conteo_virtual1 = @subregions.where(:equipment => {:origen => "Antioquia Virtual fase I"}).count
+  @subregions_conteo_virtual2 = @subregions.where(:equipment => {:origen => "Antioquia Virtual fase 2"}).count
+  @subregions_conteo_virtual3 = @subregions.where(:equipment => {:origen => "Antioquia Virtual fase 3"}).count
+  @subregions_conteo_antioquia = @subregions.where(:equipment => {:origen => "ANTIOQUIA_DIGITAL fase 1"}).count
+#Equipos por tipo 
+  @subregions_conteo_escritorio = @subregions.where(:equipment => {:tipo => "escritorio"}).count
+  @subregions_conteo_portatil = @subregions.where(:equipment => {:tipo => "portatil"}).count
+  #Equipos por Fabricante 
+  @subregions_conteo_hp = @subregions.where(:equipment => {:fabricante => "Hewlett-Packard"}).count
+  @subregions_conteo_compaq = @subregions.where(:equipment => {:fabricante => "compaq"}).count
+  @subregions_conteo_compumax = @subregions.where(:equipment => {:fabricante => "Compumax M722SR"}).count
+
+
+
   end
 
   def index

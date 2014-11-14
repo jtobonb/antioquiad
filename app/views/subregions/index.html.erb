@@ -4,7 +4,8 @@
 
 <div class="row-fluid">
     <div class="span12">
-        <%= link_to 'Ingresar una Subregión', new_municipio_path, :class => "btn btn btn-success" %>
+       <a href="/subregions/new" class="btn btn btn-success">Ingrese una Subregión</a>
+       
     </div>
 </div>
 <br />
@@ -19,7 +20,7 @@
 
 <% @subregions.each do |subregion| %>
   <tr>
-  <td><a href="/subregions/<%= subregion.nombre_subregion %>"><%= subregion.nombre_subregion %></a></td>
+  <td><a href="/subregions/subregions_reporte/<%= subregion.nombre_subregion %>"><%= subregion.nombre_subregion %></a></td>
   <td><%= subregion.cod_subregion %></td>
 
   </tr>

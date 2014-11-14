@@ -13,6 +13,21 @@ class PrincipalEstablecsController < ApplicationController
                             equipment.tipo, equipment.disco_duro, equipment.nombre as 'Nombre_Equipo', equipment.origen,
                              equipment.fecha_entrega, equipment.fabricante")
                           .where(:principal_establecs => {:dane_establec => params[:dane_establecimiento]})
+
+  #Equipos por origen
+  @subregions_conteo = @establecimientos.count
+  @subregions_conteo_media = @establecimientos.where(:equipment => {:origen => "P_MEDIA"}).count
+  @subregions_conteo_virtual1 = @establecimientos.where(:equipment => {:origen => "Antioquia Virtual fase I"}).count
+  @subregions_conteo_virtual2 = @establecimientos.where(:equipment => {:origen => "Antioquia Virtual fase 2"}).count
+  @subregions_conteo_virtual3 = @establecimientos.where(:equipment => {:origen => "Antioquia Virtual fase 3"}).count
+  @subregions_conteo_antioquia = @establecimientos.where(:equipment => {:origen => "ANTIOQUIA_DIGITAL fase 1"}).count
+#Equipos por tipo 
+  @subregions_conteo_escritorio = @establecimientos.where(:equipment => {:tipo => "escritorio"}).count
+  @subregions_conteo_portatil = @establecimientos.where(:equipment => {:tipo => "portatil"}).count
+  #Equipos por Fabricante 
+  @subregions_conteo_hp = @establecimientos.where(:equipment => {:fabricante => "Hewlett-Packard"}).count
+  @subregions_conteo_compaq = @establecimientos.where(:equipment => {:fabricante => "compaq"}).count
+  @subregions_conteo_compumax = @establecimientos.where(:equipment => {:fabricante => "Compumax M722SR"}).count                        
   end
 
   def index
