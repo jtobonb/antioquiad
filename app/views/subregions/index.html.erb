@@ -15,6 +15,9 @@
   <tr>
     <th>nombre</th>
     <th>codigo</th>
+    <th><div align="center"><a href="#" title="Buscar"><i class="icon-search"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Editar"><i class="icon-edit"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Eliminar"><i class="icon-remove"></i></a></div></th>
 
   </tr>
 
@@ -22,7 +25,9 @@
   <tr>
   <td><a href="/subregions/subregions_reporte/<%= subregion.nombre_subregion %>"><%= subregion.nombre_subregion %></a></td>
   <td><%= subregion.cod_subregion %></td>
-
+    <td><%= link_to 'Mostrar', subregion %></td>
+    <td><%= link_to 'Editar', edit_subregion_path(subregion) %></td>
+    <td><%= link_to 'Eliminar', subregion, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
   </tr>
 <% end %>
 </table>

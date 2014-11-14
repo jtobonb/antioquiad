@@ -33,13 +33,15 @@ class PrincipalEstablecsController < ApplicationController
   def index
     if current_user.superadmin?
     @principal_establecs = PrincipalEstablec.all
+
+                          
     else
       @join_sedes = Sede.joins('INNER JOIN principal_establecs ON  principal_establecs.dane_establec = sedes.dane_establec').where(correo: current_user.email)
       @join_establecimientos = PrincipalEstablec.joins('INNER JOIN sedes ON  sedes.dane_establec = principal_establecs.dane_establec').where(correo: current_user.email)
       @dane= @join_establecimientos[0].dane_establec
       @principal_establecs = PrincipalEstablec.where(dane_establec: @dane)
     end
-    @join = Sede.joins('INNER JOIN principal_establecs pr ON  pr.dane_establec = sedes.dane_establec').where(correo: current_user.email)
+    
   end
 
   # GET /principal_establecs/1
@@ -115,7 +117,12 @@ class PrincipalEstablecsController < ApplicationController
 
   def informacion_usuario
     if current_user.superadmin?
-      @principal_establecs = PrincipalEstablec.joins()
+          @usuarios = Subregion.joins("inner join municipios on municipios.cod_subregion = subregions.cod_subregion")
+                          .joins("inner join principal_establecs on principal_establecs.cod_municipio = municipios.cod_municipio")
+                          .joins("inner join sedes on sedes.dane_establec = principal_establecs.dane_establec")
+                          .select("municipios.nombre_municipio,municipios.cod_municipio, subregions.nombre_subregion,
+                            subregions.cod_subregion,principal_establecs.dane_establec,principal_establecs.nombre as 'Nombre_Establecimiento',
+                            principal_establecs.direccion,principal_establecs.correo, principal_establecs.rector,sedes.nombre as 'Nombre_Sede',sedes.dane_sede")
     else
       @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
       @dane_establec= @grab_dane_establecimiento[0].dane_establec

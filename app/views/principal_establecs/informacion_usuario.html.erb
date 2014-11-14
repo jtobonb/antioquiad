@@ -1,17 +1,23 @@
 
 <h1>INFORMACION USUARIO</h1>
+<table class="table table-bordered table-striped">
+      <tr>
+      <th>Subregión</th>
+      <th>Municipio</th>
+      <th>Correo</th>
+        <th>Nombre Establecimiento</th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Correo</th>
-  </tr>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+      <td><%= usuario.nombre_subregion %></td>
+      <td><%= usuario.nombre_municipio %></td>
+        <td><%= usuario.correo %></td>
+        <td><%= usuario.Nombre_Establecimiento %></td>
+        <td><%= usuario.rector %></td>
+      </tr>
 
-<% @principal_establecs.each do |usuario| %>
-  <tr>
-    <td><%= usuario.email %></td>
-  </tr>
-
-<br />
+    <br />
 </table>
 
  <%end%>
