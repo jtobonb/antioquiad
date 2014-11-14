@@ -1,6 +1,8 @@
 class EstablecPpalsController < ApplicationController
   # GET /establec_ppals
   # GET /establec_ppals.json
+
+  
   def index
     @establec_ppals = EstablecPpal.all
 

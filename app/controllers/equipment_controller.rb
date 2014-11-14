@@ -31,9 +31,22 @@ class EquipmentController < ApplicationController
     end
   end
 
-      def reportes
+   def reportes
+    @equipment = Equipment.new
+    #Municipios de una Subregion
+    @municipios = Subregion.joins("inner join municipios mu on mu.cod_subregion = subregions.cod_subregion")
+    .select("distinct mu.nombre_municipio").where(nombre_subregion: "NORTE")
 
-      end
+    #Establecimientos de un Municipio
+    @establecimientos = Municipio.joins("inner join principal_establecs pe on pe.cod_municipio = municipios.cod_municipio")
+    .select("distinct pe.nombre").where(nombre_municipio: "DONMATIAS")
+
+    #Sedes de un Establecimiento
+    
+    @sedes = PrincipalEstablec.joins("inner join sedes se on se.dane_establec = principal_establecs.dane_establec")
+    .select("se.nombre").where(nombre: "CER_CHALI")
+
+  end
 
 
 

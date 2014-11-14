@@ -1,6 +1,18 @@
 class PrincipalEstablecsController < ApplicationController
   # GET /principal_establecs
   # GET /principal_establecs.json
+  def establecimientos_reporte
+
+    @municipios = Subregion.joins("inner join municipios mu on mu.cod_subregion = subregions.cod_subregion")
+                          .joins("inner join principal_establecs pe on pe.cod_municipio = mu.cod_municipio")
+                          .joins("inner join sedes se on se.dane_establec = pe.dane_establec")
+                          .joins("inner join equipment eq on eq.dane_sede = se.dane_sede")
+                          .select("mu.nombre_municipio,mu.cod_municipio, subregions.nombre_subregion,
+                            subregions.cod_subregion,pe.dane_establec,pe.nombre 'Nombre_Establecimiento',pe.direccion,se.nombre 'Nombre_Sede', se.dane_sede,
+                            eq.tipo, eq.disco_duro, eq.nombre, eq.origen, eq.fecha_entrega, eq.fabricante")
+                          .where(nombre_subregion: params[:subregion])
+  end
+
   def index
     if current_user.superadmin?
     @principal_establecs = PrincipalEstablec.all

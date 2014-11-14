@@ -13,6 +13,10 @@ Antioquiad::Application.routes.draw do
   get '/equipment/fabricante/:fabricante', to: 'equipment#fabricante'
   get '/principal_establecs/informacion_usuario', to: 'principal_establecs#informacion_usuario'
   get '/equipment/reportes', to: 'equipment#reportes'
+  get '/subregions/subregion_reportes/:subregion', to: 'subregions#subregions_reporte'
+  get '/municipios/municipios_reporte/:subregion', to: 'municipios#municipios_reporte'
+  get '/principal_establecs/establecimientos_reporte/:subregion', to: 'principal_establecs#establecimientos_reporte'
+  get '/sedes/sedes_reporte/:subregion', to: 'sedes#sedes_reporte'
   resources :municipios
   resources :subregions
   resources :suppliers

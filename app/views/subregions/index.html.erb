@@ -1,30 +1,27 @@
 <div class="page-header">
-        <h1>Subregiones</h1>
+        <h1>Municipios</h1>
 </div>
 
 <div class="row-fluid">
     <div class="span12">
-        <%= link_to 'Crear nuevo', new_subregion_path, :class => "btn btn btn-success" %>
+        <%= link_to 'Crear nuevo', new_municipio_path, :class => "btn btn btn-success" %>
     </div>
 </div>
 <br />
 
+
 <table class="table table-bordered table-striped">
   <tr>
-    <th>Código subregión</th>
-    <th>Nombre subregión</th>
-    <th><div align="center"><a href="#" title="Buscar"><i class="icon-search"></i></a></div></th>
-    <th><div align="center"><a href="#" title="Editar"><i class="icon-edit"></i></a></div></th>
-    <th><div align="center"><a href="#" title="Eliminar"><i class="icon-remove"></i></a></div></th>
+    <th>nombre</th>
+    <th>codigo</th>
+
   </tr>
 
 <% @subregions.each do |subregion| %>
   <tr>
+  <td><a href="/subregions/subregion_reportes/<%= subregion.nombre_subregion %>"><%= subregion.nombre_subregion %></a></td>
     <td><%= subregion.cod_subregion %></td>
-    <td><%= subregion.nombre_subregion %></td>
-    <td><%= link_to 'Mostrar', subregion %></td>
-    <td><%= link_to 'Editar', edit_subregion_path(subregion) %></td>
-    <td><%= link_to 'Eliminar', subregion, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+
   </tr>
 <% end %>
 </table>
