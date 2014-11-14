@@ -9,7 +9,7 @@
 </div>
 <br />
 
-<table class="table table-bordered table-striped">
+<table id="tablaSedes" class="table table-bordered table-striped">
   <tr>
     <th>Dane sede</th>
     <!--
@@ -52,3 +52,12 @@
   </tr>
 <% end %>
 </table>
+
+<script language="javascript" type="text/javascript"> 
+  var table1_Props =  {                     
+    col_3: "none", 
+    col_4: "none",  
+    col_5: "none", 
+                };
+  var tf1 = setFilterGrid("tablaSedes", table1_Props);
+</script>

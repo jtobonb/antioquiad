@@ -11,7 +11,7 @@
 
 <div class="row-fluid">
     <div class="span12">
-        <table class="table table-bordered table-striped">
+        <table id="tablaEstablecimientos" class="table table-bordered table-striped">
           <tr>
             <th>Codigo dane</th>
             <!--
@@ -58,3 +58,12 @@
         </table>
     </div>
 </div>
+
+<script language="javascript" type="text/javascript"> 
+  var table1_Props =  {                     
+    col_3: "none", 
+    col_4: "none",  
+    col_5: "none", 
+                };
+  var tf1 = setFilterGrid("tablaEstablecimientos", table1_Props);
+</script>
