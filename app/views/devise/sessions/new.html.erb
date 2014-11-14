@@ -7,8 +7,8 @@
 		
 		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-			<%= f.email_field :email, autofocus: true, :placeholder => "Correo electrónico" %><br />
-		    <%= f.password_field :password, autocomplete: "off", :placeholder => "Contraseña" %><br />
+			<%= f.email_field :email, autofocus: true, :placeholder => "Correo electrónico", :required => "required" %><br />
+		    <%= f.password_field :password, autocomplete: "off", :placeholder => "Contraseña", :required => "required" %><br />
 				
 			<% if devise_mapping.rememberable? -%>
 			    <div>
