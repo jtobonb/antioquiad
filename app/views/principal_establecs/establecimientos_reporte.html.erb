@@ -1,11 +1,11 @@
 <div class="page-header">
-        <h1>Municipios</h1>
+        <h1>Establecimiento</h1>
 </div>
 
 <br />
 <div class="row-fluid">
     <div class="span12">
-        <%= link_to 'Regresar a Subregiones', subregions_path, :class => "btn btn btn-success" %>
+        <%= link_to 'Regresar a establecimientos', principal_establecs_path, :class => "btn btn btn-success" %>
     </div>
 </div>
 <br />
@@ -25,7 +25,7 @@
    
   </tr>
 
-<% @municipios.each do |equipment| %>
+<% @establecimientos.each do |equipment| %>
   <tr>
   <td><%= equipment.nombre_subregion %></td>
   <td><%= equipment.Nombre_Sede %></td>
@@ -34,7 +34,7 @@
     <td><%= equipment.tipo %></td>
     <td><%= equipment.origen %></td>
     <td><%= equipment.fecha_entrega %></td>
-    <td><%= equipment.nombre %></td>
+    <td><%= equipment.Nombre_Equipo %></td>
     <td><%= equipment.fabricante %></td>
   </tr>
 <% end %>

@@ -1,5 +1,5 @@
 <div class="page-header">
-        <h1>Municipios</h1>
+        <h1>Equipamieto Subregiones</h1>
 </div>
 
 <br />
@@ -14,28 +14,30 @@
 <table class="table table-bordered table-striped">
   <tr>
   <th>Nombre Subregion</th>
-  <th>Nombre Sede</th>
   <th>Nombre Establecimiento</th>
-    <th>Dane sede</th>
-    <th>Tipo</th>
-    <th>Origen</th>
-    <th>Fecha entrega</th>
-    <th>Nombre</th>
-    <th>Fabricante</th>
+  <th>Nombre Sede</th>
+      <th>Dane sede</th>
+      <th>Dane Establecimiento</th>
+      <th>Tipo</th>
+      <th>Origen</th>
+      <th>Fecha entrega</th>
+      <th>Nombre Equipo</th>
+      <th>Fabricante</th>
    
   </tr>
 
-<% @subregions.each do |equipment| %>
+<% @subregions.each do |municipio| %>
   <tr>
-  <td><%= equipment.nombre_subregion %></td>
-  <td><%= equipment.Nombre_Sede %></td>
-  <td><%= equipment.Nombre_Establecimiento %></td>
-    <td><%= equipment.dane_sede %></td>
-    <td><%= equipment.tipo %></td>
-    <td><%= equipment.origen %></td>
-    <td><%= equipment.fecha_entrega %></td>
-    <td><%= equipment.nombre %></td>
-    <td><%= equipment.fabricante %></td>
+  <td><%= municipio.nombre_subregion %></td>
+  <td><%= municipio.Nombre_Establecimiento %></td>
+  <td><%= municipio.Nombre_Sede %></td>
+     <td><%= municipio.dane_sede %></td>
+     <td><%= municipio.dane_establec %></td>
+    <td><%= municipio.tipo %></td>
+    <td><%= municipio.origen %></td>
+    <td><%= municipio.fecha_entrega %></td>
+    <td><%= municipio.Nombre_Equipo %></td>
+    <td><%= municipio.fabricante %></td>
   </tr>
 <% end %>
 </table>

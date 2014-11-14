@@ -4,7 +4,7 @@
 
 <div class="row-fluid">
     <div class="span12">
-        <%= link_to 'Crear nuevo', new_principal_establec_path, :class => "btn btn btn-success" %>
+        <%= link_to 'Ingresar un nuevo Establecimiento', new_principal_establec_path, :class => "btn btn btn-success" %>
     </div>
 </div>
 <br />
@@ -35,7 +35,8 @@
           
         <% @principal_establecs.each do |principal_establec| %>
           <tr>
-            <td><%= principal_establec.dane_establec %></td>
+            
+            <td><a href="/establecimientos/<%= principal_establec.dane_establec %>"><%= principal_establec.dane_establec %></a></td>
             <!--
             <td><%= principal_establec.localidad %></td>
             -->

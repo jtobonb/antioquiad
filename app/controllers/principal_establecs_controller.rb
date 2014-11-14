@@ -3,14 +3,16 @@ class PrincipalEstablecsController < ApplicationController
   # GET /principal_establecs.json
   def establecimientos_reporte
 
-    @municipios = Subregion.joins("inner join municipios mu on mu.cod_subregion = subregions.cod_subregion")
-                          .joins("inner join principal_establecs pe on pe.cod_municipio = mu.cod_municipio")
-                          .joins("inner join sedes se on se.dane_establec = pe.dane_establec")
-                          .joins("inner join equipment eq on eq.dane_sede = se.dane_sede")
-                          .select("mu.nombre_municipio,mu.cod_municipio, subregions.nombre_subregion,
-                            subregions.cod_subregion,pe.dane_establec,pe.nombre 'Nombre_Establecimiento',pe.direccion,se.nombre 'Nombre_Sede', se.dane_sede,
-                            eq.tipo, eq.disco_duro, eq.nombre, eq.origen, eq.fecha_entrega, eq.fabricante")
-                          .where(nombre_subregion: params[:subregion])
+   @establecimientos = Subregion.joins("inner join municipios on municipios.cod_subregion = subregions.cod_subregion")
+                          .joins("inner join principal_establecs on principal_establecs.cod_municipio = municipios.cod_municipio")
+                          .joins("inner join sedes on sedes.dane_establec = principal_establecs.dane_establec")
+                          .joins("inner join equipment on equipment.dane_sede = sedes.dane_sede")
+                          .select("municipios.nombre_municipio,municipios.cod_municipio, subregions.nombre_subregion,
+                            subregions.cod_subregion,principal_establecs.dane_establec,principal_establecs.nombre as 'Nombre_Establecimiento',
+                            principal_establecs.direccion, sedes.nombre as 'Nombre_Sede',sedes.dane_sede,
+                            equipment.tipo, equipment.disco_duro, equipment.nombre as 'Nombre_Equipo', equipment.origen,
+                             equipment.fecha_entrega, equipment.fabricante")
+                          .where(:principal_establecs => {:dane_establec => params[:dane_establecimiento]})
   end
 
   def index

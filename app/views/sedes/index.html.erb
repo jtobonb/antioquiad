@@ -4,7 +4,7 @@
 
 <div class="row-fluid">
     <div class="span12">
-        <%= link_to 'Crear nuevo', new_sede_path, :class => "btn btn btn-success" %>
+        <%= link_to 'Ingresar una Sede Educativa', new_sede_path, :class => "btn btn btn-success" %>
     </div>
 </div>
 <br />
@@ -32,7 +32,7 @@
 
 <% @sedes.each do |sede| %>
   <tr>
-    <td><%= sede.dane_sede %></td>
+  <td><a href="/sedes/<%= sede.dane_sede %>"><%= sede.dane_sede %></a></td>
     <!--
     <td><%= sede.dane_establec %></td>
     <td><%= sede.localidad %></td>
