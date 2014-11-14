@@ -1,38 +1,53 @@
 <div class="page-header">
-        <h1>Equipamieto Subregiones</h1>
+        <h1>Equipamiento Subregiones</h1>
 </div>
-
 <br />
+
 <div class="row-fluid">
     <div class="span12">
         <%= link_to 'Regresar a Subregiones', subregions_path, :class => "btn btn btn-success" %>
     </div>
 </div>
 <br />
-<p><%=@subregions_conteo%> Total Equipos en la subregión</p>
-<p><%=@subregions_conteo_media%> Equipos de la media en la subregión</p>
-<p><%=@subregions_conteo_virtual1%> Equipos Antioquia Virtual Fase 1 en la subregión</p>
-<p><%=@subregions_conteo_virtual2%> Equipos Antioquia Virtual Fase 2 en la subregión</p>
-<p><%=@subregions_conteo_virtual3%> Equipos Antioquia Virtual Fase 3 en la subregión</p>
-<p><%=@subregions_conteo_antioquia%> Equipos Antioquia Digital Fase 1 en la subregión</p>
-<p><%=@subregions_conteo_escritorio%> Equipos de escritorio en la subregión</p>
-<p><%=@subregions_conteo_portatil%> Equipos portátil en la subregión</p>
-<p><%=@subregions_conteo_hp%> Equipos Hewlett Packard en la subregión</p>
-<p><%=@subregions_conteo_compaq%> Equipos Compaq en la subregión</p>
-<p><%=@subregions_conteo_compumax%> Equipos Compumax en la subregión</p>
 
+<div class="page-header">
+  <h3>Reporte de totales</h3>
+</div>
+<br />
+
+<div class="row-fluid">
+  <div class="span12 well">
+    <div class="span6">
+      <p><%=@subregions_conteo%> Total Equipos en la subregión</p>
+      <p><%=@subregions_conteo_media%> Equipos de la media en la subregión</p>
+      <p><%=@subregions_conteo_virtual1%> Equipos Antioquia Virtual Fase 1 en la subregión</p>
+      <p><%=@subregions_conteo_virtual2%> Equipos Antioquia Virtual Fase 2 en la subregión</p>
+      <p><%=@subregions_conteo_virtual3%> Equipos Antioquia Virtual Fase 3 en la subregión</p>
+    </div>
+    <div class="span6">
+      <p><%=@subregions_conteo_antioquia%> Equipos Antioquia Digital Fase 1 en la subregión</p>
+      <p><%=@subregions_conteo_escritorio%> Equipos de escritorio en la subregión</p>
+      <p><%=@subregions_conteo_portatil%> Equipos portátil en la subregión</p>
+      <p><%=@subregions_conteo_hp%> Equipos Hewlett Packard en la subregión</p>
+      <p><%=@subregions_conteo_compaq%> Equipos Compaq en la subregión</p>
+      <p><%=@subregions_conteo_compumax%> Equipos Compumax en la subregión</p>
+    </div>
+  </div>  
+</div>
+
+<div class="table-responsive">
 <table class="table table-bordered table-striped">
   <tr>
   <th>Nombre Subregion</th>
   <th>Nombre Establecimiento</th>
   <th>Nombre Sede</th>
-      <th>Dane sede</th>
-      <th>Dane Establecimiento</th>
-      <th>Tipo</th>
-      <th>Origen</th>
-      <th>Fecha entrega</th>
-      <th>Nombre Equipo</th>
-      <th>Fabricante</th>
+  <th>Dane sede</th>
+  <th>Dane Establecimiento</th>
+  <th>Tipo</th>
+  <th>Origen</th>
+  <th>Fecha entrega</th>
+  <th>Nombre Equipo</th>
+  <th>Fabricante</th>
    
   </tr>
 
@@ -51,3 +66,4 @@
   </tr>
 <% end %>
 </table>
+</div>  
