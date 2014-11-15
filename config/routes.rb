@@ -3,6 +3,7 @@ Antioquiad::Application.routes.draw do
   
   root :to => "start#index"
   get "admin/dashboard"
+
 # get '/equipment/tipo', to: 'equipment#tipo'
 
   ActiveAdmin.routes(self)
@@ -11,7 +12,7 @@ Antioquiad::Application.routes.draw do
   get '/equipment/programa/:origen', to: 'equipment#programa'
   get '/equipment/programa/:fecha_entrega', to: 'equipment#fecha'
   get '/equipment/fabricante/:fabricante', to: 'equipment#fabricante'
-  get '/principal_establecs/informacion_usuario', to: 'principal_establecs#informacion_usuario'
+  get '/principal_establecs/informacion_usuario', to: 'principal_establecs#informacion_usuario' 
   get '/equipment/reportes', to: 'equipment#reportes'
   get '/subregions/subregions_reporte/:subregion', to: 'subregions#subregions_reporte'
   get '/municipios/municipios_reporte/:municipio', to: 'municipios#municipios_reporte'

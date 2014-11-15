@@ -1,20 +1,21 @@
-
-<h1>INFORMACION USUARIO</h1>
-
-<table>
+<table class="table table-bordered table-striped">
   <tr>
-    <th>Correo</th>
+  <th>Nombre Subregion</th>
+  <th>Nombre Municipio</th>
+  <th>Nombre Establecimiento</th>
+  <th>Dane Establecimiento</th>
+    <th>Correo Electrònico</th>
+
+   
   </tr>
 
-<% @principal_establecs.each do |usuario| %>
+<% @usuarios.each do |equipment| %>
   <tr>
-    <td><%= usuario.email %></td>
+	  <td><%= equipment.nombre_subregion %></td>
+	  <td><%= equipment.nombre_municipio %></td>
+	  <td><%= equipment.Nombre_Establecimiento %></td>
+	  <td><%= equipment.dane_establec %></td>
+	  <td><%= equipment.correo %></td>
   </tr>
-
-<br />
+<% end %>
 </table>
-
- <%end%>
-
-
-<%= link_to 'New Equipment', new_equipment_path %>
