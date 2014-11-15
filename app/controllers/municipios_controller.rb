@@ -17,7 +17,7 @@ class MunicipiosController < ApplicationController
                           .joins("inner join principal_establecs on principal_establecs.cod_municipio = municipios.cod_municipio")
                           .joins("inner join sedes on sedes.dane_establec = principal_establecs.dane_establec")
                           .joins("inner join equipment on equipment.dane_sede = sedes.dane_sede")
-                          .select("municipios.nombre_municipio,municipios.cod_municipio, subregions.nombre_subregion,
+                          .select("distinct municipios.nombre_municipio,municipios.cod_municipio, subregions.nombre_subregion,
                             subregions.cod_subregion,principal_establecs.dane_establec,principal_establecs.nombre as 'Nombre_Establecimiento',
                             principal_establecs.direccion, sedes.nombre as 'Nombre_Sede',sedes.dane_sede,
                             equipment.tipo, equipment.disco_duro, equipment.nombre as 'Nombre_Equipo', equipment.origen,
