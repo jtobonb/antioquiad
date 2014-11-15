@@ -1,7 +1,13 @@
 <div class="page-header">
         <h1>Equipos por programa</h1>
 </div>
-Cantidad Equipos = <%= @equipment_conteo %>
+
+<div class="row-fluid">
+  <div class="span12 well">
+    <strong>Cantidad Equipos: </strong> <%= @equipment_conteo %>
+  </div>
+</div>
+
 <% unless @equipment.empty?%>
 <table class="table table-bordered table-striped">
   <tr>

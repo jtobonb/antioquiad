@@ -14,18 +14,27 @@
   <tr>
     <th>nombre</th>
     <th>codigo</th>
-
+    <th><div align="center"><a href="#" title="Buscar"><i class="icon-search"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Editar"><i class="icon-edit"></i></a></div></th>
+    <th><div align="center"><a href="#" title="Eliminar"><i class="icon-remove"></i></a></div></th>
   </tr>
 
 <% @municipios.each do |municipio| %>
   <tr>
   <td><a href="/municipios/municipios_reporte/<%= municipio.nombre_municipio %>"><%= municipio.nombre_municipio %></a></td>
-    <td><%= municipio.cod_subregion %></td>
-
+  <td><%= municipio.cod_subregion %></td>
+  <td><%= link_to 'Mostrar', municipio %></td>
+  <td><%= link_to 'Editar', edit_municipio_path(municipio) %></td>
+  <td><%= link_to 'Eliminar', municipio, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <script language="javascript" type="text/javascript"> 
-  var tf1 = setFilterGrid("tablaMunicipios");
+var table1_Props =  {                     
+    col_2: "none", 
+    col_3: "none",  
+    col_4: "none", 
+                };
+  var tf1 = setFilterGrid("tablaMunicipios", table1_Props);
 </script>

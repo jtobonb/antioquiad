@@ -93,3 +93,15 @@ es:
               blank: "debe contener algún elemento"
             responsable:
               blank: "debe contener algún elemento"
+        equipment:
+          attributes:
+            dane_sede:
+              blank: "debe contener algún elemento"
+            fecha_entrega:
+              blank: "debe contener algún elemento"
+            modelo:
+              blank: "debe contener algún elemento"
+            nombre:
+              blank: "debe contener algún elemento"
+            serial:
+              blank: "debe contener algún elemento"
