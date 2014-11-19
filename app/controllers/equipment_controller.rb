@@ -85,6 +85,11 @@ class EquipmentController < ApplicationController
     if current_user.superadmin?
     @equipment = Equipment.all
     @equipment_conteo = Equipment.count unless @equipment.empty?
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @equipment }
+      format.xls # { send_data @equipment.to_csv(col_sep: "\t") }
+              end
     else
       @grab_dane_establecimiento = PrincipalEstablec.where(correo: current_user.email)
       @dane_establec= @grab_dane_establecimiento[0].dane_establec

@@ -33,6 +33,11 @@ class PrincipalEstablecsController < ApplicationController
   def index
     if current_user.superadmin?
     @principal_establecs = PrincipalEstablec.all
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @principal_establec }
+        format.xls # { send_data @products.to_csv(col_sep: "\t") }
+      end
     else
       @join_sedes = Sede.joins('INNER JOIN principal_establecs ON  principal_establecs.dane_establec = sedes.dane_establec').where(correo: current_user.email)
       @join_establecimientos = PrincipalEstablec.joins('INNER JOIN sedes ON  sedes.dane_establec = principal_establecs.dane_establec').where(correo: current_user.email)

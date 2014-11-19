@@ -50,6 +50,7 @@ class SubregionsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @subregions }
+       format.xls # { send_data @products.to_csv(col_sep: "\t") }
     end
   end 
 def gerarquia

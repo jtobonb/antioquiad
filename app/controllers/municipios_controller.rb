@@ -7,6 +7,7 @@ class MunicipiosController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @municipios }
+      format.xls # { send_data @municipios.to_csv(col_sep: "\t") }
     end
   end
 
