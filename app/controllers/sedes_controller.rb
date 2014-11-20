@@ -107,7 +107,7 @@ class SedesController < ApplicationController
     @sede.destroy
 
     respond_to do |format|
-      format.html { redirect_to sedes_url }
+      format.html { redirect_to sedes_url, notice: 'Registro eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

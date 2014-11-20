@@ -110,7 +110,7 @@ class MunicipiosController < ApplicationController
     @municipio.destroy
 
     respond_to do |format|
-      format.html { redirect_to municipios_url }
+      format.html { redirect_to municipios_url, notice: 'Registro eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

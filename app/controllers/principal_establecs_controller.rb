@@ -113,7 +113,7 @@ class PrincipalEstablecsController < ApplicationController
     @principal_establec.destroy
 
     respond_to do |format|
-      format.html { redirect_to principal_establecs_url }
+      format.html { redirect_to principal_establecs_url, notice: 'Registro eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

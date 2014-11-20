@@ -168,7 +168,7 @@ class EquipmentController < ApplicationController
     @equipment.destroy
 
     respond_to do |format|
-      format.html { redirect_to equipment_index_url }
+      format.html { redirect_to equipment_index_url, notice: 'Registro eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end
