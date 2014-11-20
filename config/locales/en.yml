@@ -16,6 +16,7 @@ es:
               blank: "debe contener algún elemento"
               wrong_length: "La longitud del número debe ser de 12"
               not_a_number: "Este campo es numérico"
+              taken: "ya existe. Ingrese un codigo diferente"
             localidad:
               blank: "debe contener algún elemento"
             rector:
@@ -38,6 +39,7 @@ es:
             cod_municipio:
               blank: "debe contener algún elemento"
               not_a_number: "Este campo es numérico"
+              taken: "ya existe. Ingrese un codigo diferente"
             cod_subregion:
               blank: "debe contener algún elemento"
               not_a_number: "Este campo es numérico"
@@ -57,6 +59,7 @@ es:
               blank: "debe contener algún elemento"
               wrong_length: "La longitud del número debe ser de 12"
               not_a_number: "Este campo es numérico"
+              taken: "ya existe. Ingrese un codigo diferente"
             direccion:
               blank: "debe contener algún elemento"
             jornada:
@@ -76,6 +79,7 @@ es:
               wrong_length: "La longitud del número debe ser de 3"
               blank: "debe contener algún elemento"
               not_a_number: "Este campo es numérico"
+              taken: "ya existe. Ingrese un codigo diferente"
             nombre_subregion:
               blank: "debe contener algún elemento"
         supplier:

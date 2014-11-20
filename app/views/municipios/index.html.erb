@@ -1,5 +1,5 @@
-<div class="page-header">
-        <h1>Municipios</h1>
+<div class="page-header" align="center">
+        <h3>Municipios</h3>
 </div>
 <p>
   Download:
@@ -26,7 +26,7 @@
 <% @municipios.each do |municipio| %>
   <tr>
   <td><a href="/municipios/municipios_reporte/<%= municipio.nombre_municipio %>"><%= municipio.nombre_municipio %></a></td>
-  <td><%= municipio.cod_subregion %></td>
+  <td><%= municipio.cod_municipio %></td>
   <td><%= link_to 'Mostrar', municipio %></td>
   <td><%= link_to 'Editar', edit_municipio_path(municipio) %></td>
   <td><%= link_to 'Eliminar', municipio, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
@@ -36,6 +36,7 @@
 
 <script language="javascript" type="text/javascript"> 
 var table1_Props =  {                     
+    col_1: "none", 
     col_2: "none", 
     col_3: "none",  
     col_4: "none", 
