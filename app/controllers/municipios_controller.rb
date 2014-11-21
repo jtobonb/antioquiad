@@ -40,6 +40,7 @@ class MunicipiosController < ApplicationController
   @subregions_conteo_compaq = @municipios.where(:equipment => {:fabricante => "compaq"}).count
   @subregions_conteo_compumax = @municipios.where(:equipment => {:fabricante => "Compumax M722SR"}).count
                           
+  @nombre_municipio = params[:municipio]
                           
   end
 

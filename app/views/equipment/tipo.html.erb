@@ -4,9 +4,12 @@
 <br />
 
 <div class="row-fluid">
-  <div class="span12 well">
+  <div class="span6 well">
     <strong>Cantidad Equipos: </strong> <%= @equipment_conteo %>
   </div>
+ <div class="span6">
+        <div align="right"><input  class="btn btn btn-success" type="button" name="imprimir" value="Imprimir Reporte" onclick="window.print();"></div>
+    </div>
 </div>
 
 <% unless @equipment.empty?%>

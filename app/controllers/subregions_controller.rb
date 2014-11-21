@@ -26,8 +26,9 @@ class SubregionsController < ApplicationController
   @subregions_conteo_portatil = @subregions.where(:equipment => {:tipo => "portatil"}).count
   #Equipos por Fabricante 
   @subregions_conteo_hp = @subregions.where(:equipment => {:fabricante => "Hewlett-Packard"}).count
-  @subregions_conteo_compaq = @subregions.where(:equipment => {:fabricante => "compaq"}).count
-  @subregions_conteo_compumax = @subregions.where(:equipment => {:fabricante => "Compumax M722SR"}).count
+  @subregions_conteo_compaq = @subregions.where(:equipment => {:fabricante => "compaq"}).count 
+  @subregions_conteo_compumax = @subregions.where(:equipment => {:fabricante => "Compumax"}).count
+  @nombre_subregion = params[:subregion]
 
 
 

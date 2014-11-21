@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
 class StartController < ApplicationController
-  def index
+  def recordar
   end
 end

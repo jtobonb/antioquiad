@@ -18,6 +18,7 @@ Antioquiad::Application.routes.draw do
   get '/municipios/municipios_reporte/:municipio', to: 'municipios#municipios_reporte'
   get '/establecimientos/establecimientos_reporte/:dane_establecimiento', to: 'principal_establecs#establecimientos_reporte'
   get '/sedes/sedes_reporte/:dane_sede', to: 'sedes#sedes_reporte'
+  get '/devise/recordar', to: 'start#recordar'
   resources :municipios
   resources :subregions
   resources :suppliers

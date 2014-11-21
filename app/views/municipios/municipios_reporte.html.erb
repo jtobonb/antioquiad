@@ -1,36 +1,46 @@
 <div class="page-header" align="center">
-        <h3>Municipios</h3>
+        <h3>Equipamiento Tecnológico <%=@nombre_municipio%></h3>
 </div>
 
 <br />
 <div class="row-fluid">
-    <div class="span12">
+    <div class="span6">
         <%= link_to 'Regresar a Municipios', municipios_path, :class => "btn btn btn-success" %>
     </div>
+
+    <div class="span6">
+        <div align="right"><input  class="btn btn btn-success" type="button" name="imprimir" value="Imprimir Reporte" onclick="window.print();"></div>
+    </div>
 </div>
 <br />
 
-<div class="page-header">
-  <h3>Reporte de totales</h3>
-</div>
-<br />
+
 
 <div class="row-fluid">
-  <div class="span12 well">
-    <div class="span6">
-      <p><%=@subregions_conteo%> Total Equipos en la subregión</p>
-      <p><%=@subregions_conteo_media%> Equipos de la media en la subregión</p>
-      <p><%=@subregions_conteo_virtual1%> Equipos Antioquia Virtual Fase 1 en la subregión</p>
-      <p><%=@subregions_conteo_virtual2%> Equipos Antioquia Virtual Fase 2 en la subregión</p>
-      <p><%=@subregions_conteo_virtual3%> Equipos Antioquia Virtual Fase 3 en la subregión</p>
+    <div class="span12 well">
+      <h3>Total Equipos Entregados: <%=@subregions_conteo%></h3>
     </div>
-    <div class="span6">
-      <p><%=@subregions_conteo_antioquia%> Equipos Antioquia Digital Fase 1 en la subregión</p>
-      <p><%=@subregions_conteo_escritorio%> Equipos de escritorio en la subregión</p>
-      <p><%=@subregions_conteo_portatil%> Equipos portátil en la subregión</p>
-      <p><%=@subregions_conteo_hp%> Equipos Hewlett Packard en la subregión</p>
-      <p><%=@subregions_conteo_compaq%> Equipos Compaq en la subregión</p>
-      <p><%=@subregions_conteo_compumax%> Equipos Compumax en la subregión</p>
+</div>
+<div class="row-fluid">
+  <div class="span12 well">
+    <div class="span4">
+    <h4>Resumen entrega por progrmas</h4>
+      <p><%=@subregions_conteo_media%> Equipos de la media</p>
+      <p><%=@subregions_conteo_virtual1%> Equipos Antioquia Virtual Fase 1</p>
+      <p><%=@subregions_conteo_virtual2%> Equipos Antioquia Virtual Fase 2</p>
+      <p><%=@subregions_conteo_virtual3%> Equipos Antioquia Virtual Fase 3</p>
+      <p><%=@subregions_conteo_antioquia%> Equipos Antioquia Virtual Fase 3</p>
+    </div>
+    <div class="span4">
+      <h4>Resumen entrega por Tipo</h4>
+      <p><%=@subregions_conteo_portatil%> Equipos Portatil</p>
+      <p><%=@subregions_conteo_escritorio%> Equipos de escritorio</p>
+    </div>
+    <div class="span4">
+      <h4>Resumen entrega por Marca</h4>
+      <p><%=@subregions_conteo_hp%> Equipos Hewlett Packard</p>
+      <p><%=@subregions_conteo_compaq%> Equipos Compaq</p>
+      <p><%=@subregions_conteo_compumax%> Equipos Compumax</p>
     </div>
   </div>  
 </div>

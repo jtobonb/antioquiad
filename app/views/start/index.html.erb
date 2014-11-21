@@ -1,3 +1,4 @@
+<% unless user_signed_in?  %>
 <div class="container">
 	<!--
 	<div class="page-header">
@@ -18,13 +19,7 @@
 			              <li data-target="#myCarousel" data-slide-to="1"></li>
 			              <li data-target="#myCarousel" data-slide-to="2"></li>
 			              <li data-target="#myCarousel" data-slide-to="3"></li>
-			              <!--
-			              <li data-target="#myCarousel" data-slide-to="4"></li>
-			              <li data-target="#myCarousel" data-slide-to="5"></li>
-			              <li data-target="#myCarousel" data-slide-to="6"></li>
-			              <li data-target="#myCarousel" data-slide-to="7"></li>
-			              <li data-target="#myCarousel" data-slide-to="8"></li>
-			          -->
+
 			            </ol>
 			            <!-- Carousel items -->
 			            <div class="carousel-inner fix_carousel">
@@ -59,10 +54,10 @@
 						<h3 align="center"><strong>¡Atención Establecimientos de Antioquia!</strong></h3>
 					</div>
 					<p>
-					Entre el próximo 19 de enero y  27 de marzo se estarán realizando los mantenimientos preventivos de la fase 1 de Antioquia Digital.
+					Entre el próximo 19 de enero y  27 de mayo se estarán realizando los mantenimientos preventivos de la fase 1 de Antioquia Digital.
 					</p>
 					<p>
-					Consulta <a href="">aquí</a> la programación de tu establecimiento. 
+					Consulta <a href="/cronograma.xls">aquí</a> la programación de tu establecimiento. 
 					</p>
 					<div class="page-header"></div>
 						<div class="row-fluid">
@@ -74,3 +69,67 @@
 			</div>
 	</div>
 </div>
+<%else%>
+<div class="container">
+	<!--
+	<div class="page-header">
+        <h2 align="center">Sistema de información para administración y control del equipamiento tecnológico de los establecimientos educativos oficiales de los municipios no certificados del departamento de Antioquia
+        </h2>
+	</div>
+-->
+	<div class="row">
+		<div class="span6">
+			  <!-- Banner -->
+			  <section>
+			    <div>  
+			      <div>
+			        <div>
+			          <div id="myCarousel" class="carousel slide image_margin">
+			            <ol class="carousel-indicators">
+			              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			              <li data-target="#myCarousel" data-slide-to="1"></li>
+			              <li data-target="#myCarousel" data-slide-to="2"></li>
+			              <li data-target="#myCarousel" data-slide-to="3"></li>
+
+			            </ol>
+			            <!-- Carousel items -->
+			            <div class="carousel-inner fix_carousel">
+			              <div class="active item"><%= image_tag("9.png", :width => 600, :alt => "banner1") %></div>
+
+			          		-->
+			            </div>
+			              <!-- Carousel nav -->
+			            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+			          </div>  <!--Close MyCarousel-->
+			        </div>  <!--Close Span12-->
+			      </div><!--Close Row-->
+			     </div> <!--Close Container-->
+			  </section>
+			  <!--Close Banner -->
+
+			</div>
+
+			<div class="span6">
+				<div align="center">
+					<br />
+					<div class="page-header">
+						<h3 align="center"><strong>¡GRACIAS POR INGRESAR A ANTIOQUIA DIGITAL Y REGISTRAR LA INFORMACIÓN DE TU ESTABLECIMIENTO EDUCATIVO Y SUS SEDES!</strong></h3>
+					</div>
+					<p>
+					Entre el próximo 19 de enero y  27 de mayo se estarán realizando los mantenimientos preventivos de la fase 1 de Antioquia Digital.
+					</p>
+					<p>
+					Consulta <a href="/cronograma.xls">aquí</a> la programación de tu establecimiento. 
+					</p>
+					<div class="page-header"></div>
+						<div class="row-fluid">
+							<div class="span12 well">
+							<h4 align="center">Recuerda que para solicitar los  servicios de mantenimiento correctivo lo debes hacer en la línea: 01-8000-401-402</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<%end%>
